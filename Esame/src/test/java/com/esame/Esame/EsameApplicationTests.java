@@ -1,4 +1,4 @@
-package it.esame.Esame;
+package com.esame.Esame;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
