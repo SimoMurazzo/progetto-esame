@@ -1,4 +1,4 @@
-package it.esame.Esame;
+package com.esame.Esame;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
