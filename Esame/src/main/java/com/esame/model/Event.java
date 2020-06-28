@@ -1,6 +1,5 @@
 package com.esame.model;
 
-import java.util.ArrayList;
 
 /**
  * Modello per evento
