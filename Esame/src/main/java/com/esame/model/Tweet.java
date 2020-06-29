@@ -26,7 +26,7 @@ public class Tweet {
 			if(isConditions)
 				return "geomagnetic conditions";
 			boolean isStorm = text.contains("geomagnetic storm");
-			if(isConditions)
+			if(isStorm)
 				return "geomagnetic storm";
 			else
 				return "tweet not valid";
