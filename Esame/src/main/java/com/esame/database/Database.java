@@ -47,31 +47,24 @@ public class Database {
 			JSONObject tweetList = (JSONObject) JSONValue.parseWithException(data);
 			String tweetDate = (String) (tweetList.get("created_at"));
 			String tweetText = (String) (tweetList.get("text"));
-			JSONArray tweetEntity = (JSONArray) (tweetList.get("entities"));
+			JSONObject tweetEntity = (JSONObject) (tweetList.get("entities"));
+			JSONArray tweetMedia = (JSONArray) (tweetEntity.get("media"));
 			
-			for(Object en: tweetEntity) {
-				if(en instanceof JSONArray) {
-					JSONArray tweetMedia = (JSONArray) (en.get("media"));
-					for(Object media: tweetMedia) {
-						if(media instanceof JSONArray) {
-							JSONArray photoSizes = (JSONArray) (media.get("sizes"));
-							for(Object sizes: photoSizes) {
-								if(sizes instanceof JSONObject) {
-									JSONArray minSize = (JSONArray) (sizes.get("small"));
-									min[1] = (minSize.get("w")).toString();
-									min[2] = (minSize.get("h")).toString();
+			for(Object m: tweetMedia) {
+				if(m instanceof JSONObject) {
+					JSONObject media = (JSONObject) m;
+					JSONObject photoSizes = (JSONObject) (media.get("sizes"));
+					JSONObject small = (JSONObject) photoSizes.get("small");
+					min[1] = (String) small.get("w");
+					min[2] = (String) small.get("h");
 									
-									JSONArray medSize = (JSONArray) (sizes.get("medium"));
-									min[1] = (medSize.get("w")).toString();
-									min[2] = (medSize.get("h")).toString();
+					JSONObject medium = (JSONObject) photoSizes.get("medium");
+					med[1] = (String) medium.get("w");
+					med[2] = (String) medium.get("h");
 									
-									JSONArray maxSize = (JSONArray) (sizes.get("small"));
-									min[1] = (maxSize.get("w")).toString();
-									min[2] = (maxSize.get("h")).toString();
-								}
-							}
-						}
-					}
+					JSONObject large = (JSONObject) photoSizes.get("large");
+					min[1] = (String) large.get("w");
+					min[2] = (String) large.get("h");
 				}
 			}
 			tweet.add(new Tweet(tweetText, tweetDate, min, max, med));
