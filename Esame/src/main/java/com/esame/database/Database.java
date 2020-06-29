@@ -1,5 +1,8 @@
 package com.esame.database;
 
-public class Database {
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+public class Database {
+	
 }
