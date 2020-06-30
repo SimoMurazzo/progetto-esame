@@ -17,7 +17,7 @@ import com.esame.database.Database;
 @RestController
 public class Controller {
 	
-	@RequestMapping(value = "tweets", method = RequestMethod.GET)
+	@RequestMapping(value = "/tweets", method = RequestMethod.GET)
 	public ArrayList<Tweet> getTweets() {
 		
 		return Database.getTweet();
