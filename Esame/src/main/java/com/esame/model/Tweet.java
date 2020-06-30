@@ -11,10 +11,11 @@ import java.util.regex.Matcher;
  */
 
 public class Tweet {
-	private String text;
+	private String text = " ";
 	private Event evento;
 	
 	public Tweet(String text, String date, String[] min, String[] max, String[] med){
+		this.text = text;
 		evento = new Event(this.findType(), this.findIntensity(), date, min, max, med);
 	}
 	
@@ -40,7 +41,7 @@ public class Tweet {
 		Pattern intensityP = Pattern.compile("[ABCMX][0-9]*.[0-9]*");
 		Matcher intensityM = intensityP.matcher(text);
 		while (intensityM.find()) 
-			intensity = intensityM.group(1);
+			intensity = intensityM.group();
 		return intensity;
 		
 		}
@@ -48,7 +49,7 @@ public class Tweet {
 			Pattern intensityP = Pattern.compile("Kp[0-9]");
 			Matcher intensityM = intensityP.matcher(text);
 			while (intensityM.find()) 
-				intensity = intensityM.group(1);
+				intensity = intensityM.group();
 			return intensity;
 			
 		}

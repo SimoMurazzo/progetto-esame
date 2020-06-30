@@ -33,6 +33,8 @@ public class Database {
 			
 			String data = "";
 			String line = "";
+			String tweetDate = " ";
+			String tweetText = " ";
 			try {
 				InputStreamReader in =  new InputStreamReader(inConnect);
 				BufferedReader buffer = new BufferedReader(in);
@@ -49,8 +51,8 @@ public class Database {
 			for(Object t: List) {
 				if(t instanceof JSONObject) {
 					JSONObject tweetList = (JSONObject) t;
-					String tweetDate = (String) (tweetList.get("created_at"));
-					String tweetText = (String) (tweetList.get("text"));
+					tweetDate = (String) (tweetList.get("created_at"));
+					tweetText = (String) (tweetList.get("text"));
 					JSONObject tweetEntity = (JSONObject) (tweetList.get("entities"));
 					if( ((JSONObject) tweetEntity).containsKey("media")) {
 						JSONArray tweetMedia = (JSONArray) (tweetEntity.get("media"));
