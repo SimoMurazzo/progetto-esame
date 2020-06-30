@@ -16,13 +16,14 @@ import org.json.simple.parser.ParseException;
 import com.esame.model.Tweet;
 
 public class Database {
-	private static String[] min = new String[2];
-	private static String[] med = new String[2];
-	private static String[] max = new String[2];
-	private static ArrayList<Tweet> tweet = new ArrayList<Tweet>();
+	private static String[] min = {" ", " "};
+	private static String[] med = {" ", " "};
+	private static String[] max = {" ", " "};
+	private static Tweet tweet;
+	private static ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	
 	public static ArrayList<Tweet> getTweet(){
-		return tweet;
+		return tweets;
 	}
 	
 	public static void download(String url) {
@@ -51,26 +52,29 @@ public class Database {
 					String tweetDate = (String) (tweetList.get("created_at"));
 					String tweetText = (String) (tweetList.get("text"));
 					JSONObject tweetEntity = (JSONObject) (tweetList.get("entities"));
-					JSONArray tweetMedia = (JSONArray) (tweetEntity.get("media"));
+					if( ((JSONObject) tweetEntity).containsKey("media")) {
+						JSONArray tweetMedia = (JSONArray) (tweetEntity.get("media"));
 					
-					for(Object m: tweetMedia) {
-						if(m instanceof JSONObject) {
-							JSONObject media = (JSONObject) m;
-							JSONObject photoSizes = (JSONObject) (media.get("sizes"));
-							JSONObject small = (JSONObject) photoSizes.get("small");
-							min[1] = (String) small.get("w");
-							min[2] = (String) small.get("h");
-											
-							JSONObject medium = (JSONObject) photoSizes.get("medium");
-							med[1] = (String) medium.get("w");
-							med[2] = (String) medium.get("h");
-											
-							JSONObject large = (JSONObject) photoSizes.get("large");
-							min[1] = (String) large.get("w");
-							min[2] = (String) large.get("h");
+						for(Object m: tweetMedia) {
+							if(m instanceof JSONObject) {
+								JSONObject media = (JSONObject) m;
+								JSONObject photoSizes = (JSONObject) (media.get("sizes"));
+								JSONObject small = (JSONObject) photoSizes.get("small");
+								min[0] = (small.get("w")).toString();
+								min[1] = (small.get("h")).toString();
+												
+								JSONObject medium = (JSONObject) photoSizes.get("medium");
+								med[0] = (medium.get("w")).toString();
+								med[1] = (medium.get("h")).toString();
+												
+								JSONObject large = (JSONObject) photoSizes.get("large");
+								max[0] = (large.get("w")).toString();
+								max[1] = (large.get("h")).toString();
+							}
+							tweet = new Tweet(tweetText, tweetDate, min, max, med);
+							tweets.add(tweet);
 						}
 					}
-					tweet.add(new Tweet(tweetText, tweetDate, min, max, med));
 				}
 			}
 		}catch(IOException e) {
@@ -83,5 +87,4 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-	
 }

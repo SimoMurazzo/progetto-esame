@@ -12,10 +12,10 @@ import java.util.regex.Matcher;
 
 public class Tweet {
 	private String text;
-	private Event event;
+	private Event evento;
 	
 	public Tweet(String text, String date, String[] min, String[] max, String[] med){
-		event = new Event(this.findType(), this.findIntensity(), date, min, max, med);
+		evento = new Event(this.findType(), this.findIntensity(), date, min, max, med);
 	}
 	
 	public String findType() {
