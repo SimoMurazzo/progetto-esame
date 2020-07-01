@@ -11,15 +11,15 @@ import java.util.regex.Matcher;
  */
 
 public class Tweet {
-	private String text = " ";
+	//private String text = " ";
 	private Event evento;
 	
 	public Tweet(String text, String date, String[] min, String[] max, String[] med){
-		this.text = text;
-		evento = new Event(this.findType(), this.findIntensity(), date, min, max, med);
+		//this.text = text;
+		evento = new Event(this.findType(text), this.findIntensity(text), date, min, max, med);
 	}
 	
-	public String findType() {
+	public String findType(String text) {
 			boolean isFlare = text.contains("flare");
 			if(isFlare)
 				return "flare";
@@ -33,9 +33,9 @@ public class Tweet {
 				return "tweet not valid";
 	}
 	
-	public String findIntensity() {
+	public String findIntensity(String text) {
 		
-		String type = findType();
+		String type = findType(text);
 		String intensity = "";
 		if (type == "flare") {
 		Pattern intensityP = Pattern.compile("[ABCMX][0-9]*.[0-9]*");
@@ -57,14 +57,6 @@ public class Tweet {
 			intensity = "intensity not valid";
 			return intensity;
 		}
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
 	}
 
 	public Event getEvento() {
