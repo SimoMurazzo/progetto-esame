@@ -4,13 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URLConnection;
+import java.net.URI;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
-import org.json.simple.JSONValue;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
 import com.esame.model.Tweet;
@@ -29,6 +30,7 @@ public class Database {
 	public static void download(String url) {
 		try {
 			URLConnection twitterConnection = new URL(url).openConnection();
+			twitterConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36");
 			InputStream inConnect = twitterConnection.getInputStream();
 			
 			String data = "";
@@ -47,13 +49,15 @@ public class Database {
 				inConnect.close();
 			}
 			
-			JSONArray List = (JSONArray) JSONValue.parseWithException(data);
-			for(Object t: List) {
+			JSONArray list = (JSONArray) JSONValue.parseWithException(data);
+			for(Object t: list) {
 				if(t instanceof JSONObject) {
 					JSONObject tweetList = (JSONObject) t;
 					tweetDate = (String) (tweetList.get("created_at"));
 					tweetText = (String) (tweetList.get("text"));
 					JSONObject tweetEntity = (JSONObject) (tweetList.get("entities"));
+					JSONArray urls = (JSONArray) tweetEntity.get("urls");
+					
 					if( ((JSONObject) tweetEntity).containsKey("media")) {
 						JSONArray tweetMedia = (JSONArray) (tweetEntity.get("media"));
 					

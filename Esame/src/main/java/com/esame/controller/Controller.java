@@ -1,11 +1,12 @@
 package com.esame.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import java.util.ArrayList;
-import com.esame.model.Tweet;
 
+import com.esame.model.Tweet;
 import com.esame.database.Database;
 
 /**

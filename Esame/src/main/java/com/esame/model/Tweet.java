@@ -54,9 +54,25 @@ public class Tweet {
 			
 		}
 		else {
-		intensity = "intensity not valid";
-		return intensity;
+			intensity = "intensity not valid";
+			return intensity;
 		}
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public Event getEvento() {
+		return evento;
+	}
+
+	public void setEvento(Event evento) {
+		this.evento = evento;
 	}
 }
 
