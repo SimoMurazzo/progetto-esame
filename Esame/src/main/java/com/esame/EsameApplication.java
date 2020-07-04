@@ -12,5 +12,4 @@ public class EsameApplication {
 		Database.download("https://wd4hfxnxxa.execute-api.us-east-2.amazonaws.com/dev/user/1.1/statuses/user_timeline.json?screen_name=_spaceweather_&count=100");
 		SpringApplication.run(EsameApplication.class, args);
 	}
-
 }
