@@ -13,11 +13,12 @@ public class TypeFilter {
 		this.getTweet(filter);
 	}
 
-	public Tweet getTweet(String filter) {
+	public boolean getTweet(String filter) {
 		for(Tweet t: tweets) {
 			if(t.getEvento().getType().equalsIgnoreCase(filter)) {
-				return t;
+				return true;
 			}
 		}
+		return false;
 	}
 }
