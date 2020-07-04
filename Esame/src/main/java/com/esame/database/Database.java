@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -56,7 +55,6 @@ public class Database {
 					tweetDate = (String) (tweetList.get("created_at"));
 					tweetText = (String) (tweetList.get("text"));
 					JSONObject tweetEntity = (JSONObject) (tweetList.get("entities"));
-					JSONArray urls = (JSONArray) tweetEntity.get("urls");
 					
 					if( ((JSONObject) tweetEntity).containsKey("media")) {
 						JSONArray tweetMedia = (JSONArray) (tweetEntity.get("media"));

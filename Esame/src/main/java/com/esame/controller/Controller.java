@@ -23,5 +23,4 @@ public class Controller {
 		
 		return Database.getTweet();
 	}
-	
 }

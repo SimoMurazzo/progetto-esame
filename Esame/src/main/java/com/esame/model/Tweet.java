@@ -11,11 +11,9 @@ import java.util.regex.Matcher;
  */
 
 public class Tweet {
-	//private String text = " ";
 	private Event evento;
 	
 	public Tweet(String text, String date, String[] min, String[] max, String[] med){
-		//this.text = text;
 		evento = new Event(this.findType(text), this.findIntensity(text), date, min, max, med);
 	}
 	
