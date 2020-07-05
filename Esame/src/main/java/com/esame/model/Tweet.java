@@ -56,6 +56,34 @@ public class Tweet {
 			return intensity;
 		}
 	}
+	
+	public String findMonth() {
+		
+		if(evento.getDate().contains("Jan"))
+			return "Jan";
+		else if(evento.getDate().contains("Feb"))
+			return "Feb";
+		else if(evento.getDate().contains("Mar"))
+			return "Mar";
+		else if(evento.getDate().contains("Apr"))
+			return "Apr";
+		else if(evento.getDate().contains("May"))
+			return "May";
+		else if(evento.getDate().contains("Jun"))
+			return "Jun";
+		else if(evento.getDate().contains("Jul"))
+			return "Jul";
+		else if(evento.getDate().contains("Aug"))
+			return "Aug";
+		else if(evento.getDate().contains("Sep"))
+			return "Sep";
+		else if(evento.getDate().contains("Oct"))
+			return "Oct";
+		else if(evento.getDate().contains("Nov"))
+			return "Nov";
+		else 
+			return "Dec";
+	}
 
 	public Event getEvento() {
 		return evento;
