@@ -2,10 +2,8 @@ package com.esame.util.stats;
 
 import java.util.ArrayList;
 
-import com.esame.exception.InvalidTypeStatException;
 import com.esame.model.GeneralStatsMod;
 import com.esame.model.Tweet;
-import com.esame.exception.InvalidTypeStatException;
 
 public class GeneralStats {
 	
@@ -15,8 +13,7 @@ public class GeneralStats {
 		this.tweets = tweetlist;
 	}
 	
-	public GeneralStatsMod returnGeneralStat(String typestat, String typefilter)
-	throws InvalidTypeStatException {
+	public GeneralStatsMod returnGeneralStat(String typestat, String typefilter) {
 		
 		GeneralStatsMod stat = new GeneralStatsMod();
 		long counter = 0;
@@ -99,10 +96,33 @@ public class GeneralStats {
 			stat.setCounter(counter);
 			return stat;
 		}
+		case "type in last month": {
+			
+			String lastMonth = tweets.get(0).findMonth();
+			if(typefilter.equals("geomagnetic conditions"))
+				counter =(long) tweets.stream()
+				.filter(Tweet -> Tweet.getEvento().getType().equals("geomagnetic conditions"))
+				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
+				.count();
+			else if(typefilter.equals("geomagnetic storm"))
+				counter =(long) tweets.stream()
+				.filter(Tweet -> Tweet.getEvento().getType().equals("geomagnetic storm"))
+				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
+				.count();
+			else if(typefilter.equals("flare"))
+				counter =(long) tweets.stream()
+				.filter(Tweet -> Tweet.getEvento().getType().equals("flare"))
+				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
+				.count();
+			else counter = 0;
+			stat.setTweetAttribute(typestat);
+			stat.setCounter(counter);
+			return stat;
+		}
 		default: {
 			stat.setTweetAttribute("Type stat not valid!");
 			stat.setCounter(0);
-			throw new InvalidTypeStatException("Tipo di statistica non valido!");
+			return stat;
 			}
 		}
 		
