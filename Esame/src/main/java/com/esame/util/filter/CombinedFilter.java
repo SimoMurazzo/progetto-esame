@@ -7,24 +7,27 @@ import com.esame.model.Tweet;
 
 public class CombinedFilter {
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
-	
-	public CombinedFilter(String filter) {
+	private ArrayList<Tweet> newTweets;
+
+	public CombinedFilter(String filterT, String filterI) {
 		tweets = Database.getTweet();
-		this.getTweet(filter);
-		this.getImage(filter);
+		this.getTweet(filterT);
+		this.getImage(filterI);
 	}
 	
-	public boolean getTweet(String filter) {
+	public ArrayList<Tweet> getTweet(String filter) {
 		for(Tweet t: tweets) {
 			if(t.getEvento().getType().equalsIgnoreCase(filter)) {
-				return true;
+				newTweets.add(t);
+			} else {
+				continue;
 			}
 		}
-		return false;
+		return newTweets;
 	}
 	
 	public String[] getImage(String filter) {
-		for(Tweet t: tweets) {
+		for(Tweet t: newTweets) {
 			if(filter.equalsIgnoreCase("min")) {
 				return t.getEvento().getMin();
 			}else if(filter.equalsIgnoreCase("med")) {

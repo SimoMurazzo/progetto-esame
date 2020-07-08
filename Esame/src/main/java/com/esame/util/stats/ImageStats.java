@@ -16,8 +16,7 @@ public class ImageStats {
 		this.tweets = tweetlist;
 	}
 	
-	public ImageStatsMod returnImageStat(String typestat, String typeDim)
-	throws InvalidTypeStatException {
+	public ImageStatsMod returnImageStat(String typestat, String typeDim) throws InvalidTypeStatException{
 		
 		ImageStatsMod stat = new ImageStatsMod();
 		
@@ -409,12 +408,7 @@ public class ImageStats {
 			}
 		}
 		default: {
-			stat.setTweetattribute("TypeStat not valid!");
-			stat.setImageDim("Dimension not valid!");
-			stat.setMin(0);
-			stat.setMed(0);
-			stat.setMax(0);
-			return stat;
+			throw new InvalidTypeStatException("Typestat or dimension not valid");
 		}
 		}
 	}

@@ -7,18 +7,22 @@ import com.esame.model.Tweet;
 
 public class TypeFilter {
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+	private ArrayList<Tweet> newTweets;
 	
 	public TypeFilter(String filter) {
 		tweets = Database.getTweet();
 		this.getTweet(filter);
 	}
 
-	public boolean getTweet(String filter) {
+	public ArrayList<Tweet> getTweet(String filter) {
 		for(Tweet t: tweets) {
 			if(t.getEvento().getType().equalsIgnoreCase(filter)) {
-				return true;
+				newTweets.add(t);
+			}
+			else {
+				continue;
 			}
 		}
-		return false;
+		return newTweets;
 	}
 }

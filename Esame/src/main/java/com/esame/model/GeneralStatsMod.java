@@ -3,11 +3,11 @@ package com.esame.model;
 public class GeneralStatsMod {
 
 	private String tweetattribute;
-	private long counter;
+	private int counter;
 	
 	public GeneralStatsMod() {}
 	
-	public GeneralStatsMod(String tweetattribute, long counter) {
+	public GeneralStatsMod(String tweetattribute, int counter) {
 		this.tweetattribute = tweetattribute;
 		this.counter = counter;
 	}
@@ -16,7 +16,7 @@ public class GeneralStatsMod {
 		return tweetattribute;
 	}
 
-	public long getCounter() {
+	public int getCounter() {
 		return counter;
 	}
 
@@ -24,7 +24,7 @@ public class GeneralStatsMod {
 		this.tweetattribute = tweetattribute;
 	}
 
-	public void setCounter(long counter) {
+	public void setCounter(int counter) {
 		this.counter = counter;
 	}
 	
