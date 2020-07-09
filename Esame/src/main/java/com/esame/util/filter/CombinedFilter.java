@@ -7,7 +7,7 @@ import com.esame.model.Tweet;
 
 public class CombinedFilter {
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
-	private ArrayList<Tweet> newTweets;
+	private ArrayList<Tweet> newTweets = new ArrayList<Tweet>();
 
 	public CombinedFilter(String filterT, String filterI) {
 		tweets = Database.getTweet();
