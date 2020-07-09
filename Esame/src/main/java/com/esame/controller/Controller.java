@@ -15,6 +15,8 @@ import com.esame.model.Tweet;
 import com.esame.service.FilterService;
 import com.esame.service.GeneralStatsService;
 import com.esame.service.ImageStatsService;
+import com.esame.model.GeneralStatsMod;
+import com.esame.model.ImageStatsMod;
 
 /**
  * Classe che gestisce le chiamate al server
@@ -36,17 +38,17 @@ public class Controller {
 		FilterService.tweetInstance(filter[0], filter[1]);
 	}
 	
-	@RequestMapping(value="stats", method = RequestMethod.POST)
-	public Object getStatsWithPost(@RequestParam(value = "typeStat") String typeStat, @RequestParam(value = "type") String type, @RequestParam(value = "filter") String filter) 
+	@RequestMapping(value="general_stats", method = RequestMethod.POST)
+	public GeneralStatsMod getGStatsWithPost(@RequestParam(value = "type") String type, @RequestParam(value = "filter") String filter) 
 			throws FilterNotFoundException, InvalidTypeStatException{
-		if(typeStat.equalsIgnoreCase("general stats")) {
 			GeneralStatsService stats = new GeneralStatsService(type, filter);
-			return ((Object) stats);
-		}
-		else if(typeStat.equalsIgnoreCase("image stats")) {
+			return stats.instanceGen(type, filter);
+	}
+	
+	@RequestMapping(value="image_stats", method = RequestMethod.POST)
+	public ImageStatsMod  getIStatsWithPost(@RequestParam(value = "type") String type, @RequestParam(value = "filter") String filter)
+			throws FilterNotFoundException, InvalidTypeStatException{
 			ImageStatsService stats = new ImageStatsService(type, filter);
-			return ((Object) stats);
-		}else
-			throw new FilterNotFoundException("typeStat not valid");
+			return stats.instanceIma(type, filter);
 	}
 }
