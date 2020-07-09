@@ -36,6 +36,7 @@ public class GeneralStats {
 				.count();
 			else counter = 0;
 			stat.setTweetAttribute(typestat);
+			stat.setAttributeType(typefilter);
 			stat.setCounter(counter);
 			return stat;
 		}
@@ -94,6 +95,7 @@ public class GeneralStats {
 				counter = 0;
 			}
 			stat.setTweetAttribute(typestat);
+			stat.setAttributeType(typefilter);
 			stat.setCounter(counter);
 			return stat;
 		}
@@ -117,6 +119,7 @@ public class GeneralStats {
 				.count();
 			else counter = 0;
 			stat.setTweetAttribute(typestat);
+			stat.setAttributeType(typefilter);
 			stat.setCounter(counter);
 			return stat;
 		}
