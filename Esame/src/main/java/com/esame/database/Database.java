@@ -21,6 +21,7 @@ public class Database {
 	private static String[] max = {" ", " "};
 	private static Tweet tweet;
 	private static ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+	private static ArrayList<Tweet> filteredTweets = new ArrayList<Tweet>();
 	
 	public static ArrayList<Tweet> getTweet(){
 		return tweets;
@@ -81,6 +82,12 @@ public class Database {
 					}
 				}
 			}
+			for(Object t: tweets) {
+				Tweet validTweet = (Tweet) t;
+				if(!(validTweet.getEvento().getType().equalsIgnoreCase("tweet not valid")))
+					filteredTweets.add(validTweet);
+			}
+			tweets = filteredTweets;
 		}catch(IOException e) {
 			System.out.println(e.getClass().getCanonicalName()+"Errore in com.esame.database.Database.java: "
 					+"Connessione non riuscita o url errato");

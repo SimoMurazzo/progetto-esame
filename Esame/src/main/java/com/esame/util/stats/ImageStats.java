@@ -20,29 +20,29 @@ public class ImageStats {
 		
 		ImageStatsMod stat = new ImageStatsMod();
 		
-		long min = 0;
+		int min = 0;
 		double med = 0;
-		long max = 0;
+		int max = 0;
 
 		switch(typestat) {
 		case "min": {
 			if(typeDim.equals("w")) {
-				min =(long) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst())
+				min =(int) tweets.stream()
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparingInt(Integer::valueOf)).get();
 				med =(double) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get())
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst())
+				max =(int) tweets.stream()
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 				
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -52,22 +52,22 @@ public class ImageStats {
 				return stat;
 			}
 			else if(typeDim.equals("h")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce((first, second) -> second))
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 						
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -87,22 +87,22 @@ public class ImageStats {
 		}
 		case "med": {
 			if(typeDim.equals("w")) {
-				min =(long) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst())
+				min =(int) tweets.stream()
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get())
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst())
+				max =(int) tweets.stream()
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 					
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -112,22 +112,22 @@ public class ImageStats {
 				return stat;
 			}
 			else if(typeDim.equals("h")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce((first, second) -> second))
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 								
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -147,22 +147,22 @@ public class ImageStats {
 		}
 		case "max": {
 			if(typeDim.equals("w")) {
-				min =(long) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst())
+				min =(int) tweets.stream()
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get())
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst())
+				max =(int) tweets.stream()
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 					
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -172,22 +172,22 @@ public class ImageStats {
 				return stat;
 			}
 			else if(typeDim.equals("h")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce((first, second) -> second))
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 										
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -208,25 +208,25 @@ public class ImageStats {
 		case "min in last month": {
 			String lastMonth = tweets.get(0).findMonth();
 			if(typeDim.equals("w")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get())
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 				
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -236,12 +236,12 @@ public class ImageStats {
 				return stat;
 			}
 			else if(typeDim.equals("h")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce((first, second) -> second))
@@ -249,12 +249,12 @@ public class ImageStats {
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 						
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -276,25 +276,25 @@ public class ImageStats {
 		case "med in last month": {
 			String lastMonth = tweets.get(0).findMonth();
 			if(typeDim.equals("w")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get())
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 				
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -304,12 +304,12 @@ public class ImageStats {
 				return stat;
 			}
 			else if(typeDim.equals("h")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce((first, second) -> second))
@@ -317,12 +317,12 @@ public class ImageStats {
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 						
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -343,25 +343,25 @@ public class ImageStats {
 		case "max in last month": {
 			String lastMonth = tweets.get(0).findMonth();
 			if(typeDim.equals("w")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get())
 				.map(Object::toString)
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
-				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst())
+				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get())
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 				
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
@@ -371,12 +371,12 @@ public class ImageStats {
 				return stat;
 			}
 			else if(typeDim.equals("h")) {
-				min =(long) tweets.stream()
+				min =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.min(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.min(Comparator.comparing(Integer::valueOf)).get();
 				med =(double) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce((first, second) -> second))
@@ -384,12 +384,12 @@ public class ImageStats {
 				.map(Double::parseDouble)
 				.mapToDouble(Double::doubleValue)
 				.average().getAsDouble();
-				max =(long) tweets.stream()
+				max =(int) tweets.stream()
 				.filter(Tweet -> Tweet.findMonth().equals(lastMonth))
 				.map(Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce((first, second) -> second))
 				.map(Object::toString)
-				.map(Long::parseLong)
-				.max(Comparator.comparing(Long::valueOf)).get();
+				.map(Integer::parseInt)
+				.max(Comparator.comparing(Integer::valueOf)).get();
 						
 				stat.setTweetattribute(typestat);
 				stat.setImageDim(typeDim);
