@@ -2,6 +2,7 @@ package com.esame.controller;
 
 import java.util.ArrayList;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,12 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.esame.database.Database;
 import com.esame.exception.FilterNotFoundException;
 import com.esame.exception.InvalidTypeStatException;
+import com.esame.model.GeneralStatsMod;
+import com.esame.model.ImageStatsMod;
 import com.esame.model.Tweet;
 import com.esame.service.FilterService;
 import com.esame.service.GeneralStatsService;
 import com.esame.service.ImageStatsService;
-import com.esame.model.GeneralStatsMod;
-import com.esame.model.ImageStatsMod;
+import com.esame.util.other.FilterParam;
+import com.esame.util.filter.Filter;
 
 /**
  * Classe che gestisce le chiamate al server
@@ -32,10 +35,10 @@ public class Controller {
 		return Database.getTweet();
 	}
 	
-	@RequestMapping(value="tweets", method = RequestMethod.POST)
-	public void getTweetsWithPost(@RequestBody String[] filter)
+	@RequestMapping(value="tweets", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = "application/json")
+	public  getTweetsWithPost(@RequestBody FilterParam filter)
 			throws FilterNotFoundException{
-		FilterService.tweetInstance(filter[0], filter[1]);
+		
 	}
 	
 	@RequestMapping(value="general_stats", method = RequestMethod.POST)

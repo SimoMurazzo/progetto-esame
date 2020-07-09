@@ -5,25 +5,24 @@ import java.util.ArrayList;
 import com.esame.database.Database;
 import com.esame.model.Tweet;
 
-public class ImageFilter {
+public class ImageFilter{
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+	private ArrayList<String[]> image = new ArrayList<String[]>();
 	
-	public ImageFilter(String filter) {
+	public ImageFilter() {
 		tweets = Database.getTweet();
-		this.getImage(filter);
 	}
 
-	public String[] getImage(String filter) {
+	public ArrayList<String[]> getImage(String filter) {
 		for(Tweet t: tweets) {
 			if(filter.equalsIgnoreCase("min")) {
-				return t.getEvento().getMin();
+				image.add(t.getEvento().getMin());
 			}else if(filter.equalsIgnoreCase("med")) {
-				return t.getEvento().getMed();
+				image.add(t.getEvento().getMed());
 			}else if(filter.equalsIgnoreCase("max")) {
-				return t.getEvento().getMax();
+				image.add(t.getEvento().getMax());
 			}
 		}
-		String[] def = {" ", " "};
-		return def;
+		return image;
 	}
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.esame.database.Database;
 import com.esame.model.Tweet;
 
-public class TypeFilter {
+public class TypeFilter{
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayList<Tweet> newTweets;
 	
