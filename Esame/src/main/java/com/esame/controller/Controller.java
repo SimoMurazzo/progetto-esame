@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.esame.database.Database;
 import com.esame.exception.FilterNotFoundException;
-import com.esame.exception.InternalGeneralException;
 import com.esame.exception.InvalidTypeStatException;
 import com.esame.model.Tweet;
 import com.esame.service.FilterService;
@@ -32,13 +31,13 @@ public class Controller {
 	
 	@RequestMapping(value="tweets", method = RequestMethod.POST)
 	public void getTweetsWithPost(@RequestBody String[] filter)
-			throws InternalGeneralException, FilterNotFoundException{
+			throws FilterNotFoundException{
 		FilterService.tweetInstance(filter[0], filter[1]);
 	}
 	
 	@RequestMapping(value="stats", method = RequestMethod.POST)
-	public void getStatsWithPost(@RequestParam(value = "type") String type, @RequestBody String filter) 
-			throws InternalGeneralException, FilterNotFoundException, InvalidTypeStatException{
+	public void getStatsWithPost(@RequestParam(value = "type") String type, @RequestParam(value = "filter") String filter) 
+			throws FilterNotFoundException, InvalidTypeStatException{
 		StatsService.statInstance(type, filter);
 	}
 }
