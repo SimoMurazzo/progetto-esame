@@ -18,8 +18,10 @@ import com.esame.model.Tweet;
 import com.esame.service.FilterService;
 import com.esame.service.GeneralStatsService;
 import com.esame.service.ImageStatsService;
+import com.esame.util.filter.CombinedFilter;
+import com.esame.util.filter.ImageFilter;
+import com.esame.util.filter.TypeFilter;
 import com.esame.util.other.FilterParam;
-import com.esame.util.filter.Filter;
 
 /**
  * Classe che gestisce le chiamate al server
@@ -36,9 +38,9 @@ public class Controller {
 	}
 	
 	@RequestMapping(value="tweets", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = "application/json")
-	public  getTweetsWithPost(@RequestBody FilterParam filter)
+	public String getTweetsWithPost(@RequestBody FilterParam filter)
 			throws FilterNotFoundException{
-		
+		return FilterService.tweetInstance(filter.getType(), filter.getFilter1(), filter.getFilter2());
 	}
 	
 	@RequestMapping(value="general_stats", method = RequestMethod.POST)

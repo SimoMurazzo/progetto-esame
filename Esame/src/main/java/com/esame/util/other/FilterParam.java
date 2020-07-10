@@ -2,11 +2,13 @@ package com.esame.util.other;
 
 public class FilterParam {
 	private String type;
-	private String filter;
+	private String filter1;
+	private String filter2;
 	
-	public FilterParam(String type, String filter) {
+	public FilterParam(String type, String filter1, String filter2) {
 		this.type = type;
-		this.filter = filter;
+		this.filter1 = filter1;
+		this.filter2 = filter2;
 	}
 
 	public String getType() {
@@ -17,13 +19,19 @@ public class FilterParam {
 		this.type = type;
 	}
 
-	public String getFilter() {
-		return filter;
+	public String getFilter1() {
+		return filter1;
 	}
 
-	public void setFilter(String filter) {
-		this.filter = filter;
+	public void setFilter1(String filter) {
+		this.filter1 = filter1;
 	}
 	
+	public String getFilter2() {
+		return filter2;
+	}
 	
+	public void setFilter2() {
+		this.filter2 = filter2;
+	}
 }

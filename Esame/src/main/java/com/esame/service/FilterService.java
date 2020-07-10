@@ -8,21 +8,26 @@ import com.esame.util.filter.ImageFilter;
 import com.esame.util.filter.TypeFilter;
 
 public class FilterService {
-	public static void tweetInstance(String filter1, String filter2) 
-			throws FilterNotFoundException {
-			if(filter1 != null && filter2 != null) {
-				CombinedFilter fil = new CombinedFilter(filter1, filter2);
+	private static String out = new String();
+	
+	public static String tweetInstance(String type, String filter1, String filter2) 
+			throws FilterNotFoundException {	
+			switch(type) {
+				case "combined":
+					CombinedFilter fil1 = new CombinedFilter();
+					out = fil1.get(filter1, filter2);
+					break;
+				case "type":
+					TypeFilter fil2 = new TypeFilter();
+					out = fil2.get(filter1);
+					break;
+				case "image":
+					ImageFilter fil3 = new ImageFilter();
+					out = fil3.get(filter2);
+					break;
+				default:
+					throw new FilterNotFoundException("Type of filter not valid");
 			}
-			else if(filter2 == null && (filter1.equalsIgnoreCase("flare")||
-					filter1.equalsIgnoreCase("geomagnetic condition")||
-					filter1.equalsIgnoreCase("geomagnetic storm"))) {
-				TypeFilter fil = new TypeFilter(filter1);
-			}
-			else if(filter1 == null && (filter2.equalsIgnoreCase("min")||
-					filter2.equalsIgnoreCase("med")||filter2.equalsIgnoreCase("max"))) {
-				ImageFilter fil = new ImageFilter();
-			}else {
-				throw new FilterNotFoundException("Filter not found: Illegal argument");
-			}
+			return out;
 	}
 }

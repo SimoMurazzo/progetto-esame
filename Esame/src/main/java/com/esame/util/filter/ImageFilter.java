@@ -3,7 +3,9 @@ package com.esame.util.filter;
 import java.util.ArrayList;
 
 import com.esame.database.Database;
+import com.esame.exception.FilterNotFoundException;
 import com.esame.model.Tweet;
+import com.esame.util.other.ArrayListOperation;
 
 public class ImageFilter{
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
@@ -13,16 +15,8 @@ public class ImageFilter{
 		tweets = Database.getTweet();
 	}
 
-	public ArrayList<String[]> getImage(String filter) {
-		for(Tweet t: tweets) {
-			if(filter.equalsIgnoreCase("min")) {
-				image.add(t.getEvento().getMin());
-			}else if(filter.equalsIgnoreCase("med")) {
-				image.add(t.getEvento().getMed());
-			}else if(filter.equalsIgnoreCase("max")) {
-				image.add(t.getEvento().getMax());
-			}
-		}
-		return image;
+	public String get(String filter) throws FilterNotFoundException{
+		String out = ArrayListOperation.arrayListToFilteredString(tweets, filter);
+		return out;
 	}
 }

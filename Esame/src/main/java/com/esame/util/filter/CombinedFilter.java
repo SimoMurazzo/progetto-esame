@@ -3,40 +3,27 @@ package com.esame.util.filter;
 import java.util.ArrayList;
 
 import com.esame.database.Database;
+import com.esame.exception.FilterNotFoundException;
 import com.esame.model.Tweet;
+import com.esame.util.other.ArrayListOperation;
 
 public class CombinedFilter {
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayList<Tweet> newTweets = new ArrayList<Tweet>();
 
-	public CombinedFilter(String filterT, String filterI) {
+	public CombinedFilter() {
 		tweets = Database.getTweet();
-		this.getTweet(filterT);
-		this.getImage(filterI);
 	}
 	
-	public ArrayList<Tweet> getTweet(String filter) {
+	public String get(String filter1, String filter2) throws FilterNotFoundException{
 		for(Tweet t: tweets) {
-			if(t.getEvento().getType().equalsIgnoreCase(filter)) {
+			if(t.getEvento().getType().equalsIgnoreCase(filter1)) {
 				newTweets.add(t);
 			} else {
 				continue;
 			}
-		}
-		return newTweets;
-	}
-	
-	public String[] getImage(String filter) {
-		for(Tweet t: newTweets) {
-			if(filter.equalsIgnoreCase("min")) {
-				return t.getEvento().getMin();
-			}else if(filter.equalsIgnoreCase("med")) {
-				return t.getEvento().getMed();
-			}else if(filter.equalsIgnoreCase("max")) {
-				return t.getEvento().getMax();
-			}
-		}
-		String[] def = {" ", " "};
-		return def;
+		}	
+		String out = ArrayListOperation.arrayListToFilteredString(newTweets, filter2);
+		return out;
 	}
 }

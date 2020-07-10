@@ -4,25 +4,25 @@ import java.util.ArrayList;
 
 import com.esame.database.Database;
 import com.esame.model.Tweet;
+import com.esame.util.other.ArrayListOperation;
 
 public class TypeFilter{
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
-	private ArrayList<Tweet> newTweets;
+	private ArrayList<Tweet> newTweets = new ArrayList<Tweet>();
 	
-	public TypeFilter(String filter) {
+	public TypeFilter() {
 		tweets = Database.getTweet();
-		this.getTweet(filter);
 	}
 
-	public ArrayList<Tweet> getTweet(String filter) {
+	public String get(String filter1) {
 		for(Tweet t: tweets) {
-			if(t.getEvento().getType().equalsIgnoreCase(filter)) {
+			if(t.getEvento().getType().equalsIgnoreCase(filter1)) {
 				newTweets.add(t);
-			}
-			else {
+			} else {
 				continue;
 			}
 		}
-		return newTweets;
+		String tString = ArrayListOperation.arrayListToString(newTweets);
+		return tString;
 	}
 }
