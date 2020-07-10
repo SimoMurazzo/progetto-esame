@@ -23,7 +23,7 @@ public class FilterParam {
 		return filter1;
 	}
 
-	public void setFilter1(String filter) {
+	public void setFilter1(String filter1) {
 		this.filter1 = filter1;
 	}
 	
@@ -31,7 +31,7 @@ public class FilterParam {
 		return filter2;
 	}
 	
-	public void setFilter2() {
+	public void setFilter2(String filter2) {
 		this.filter2 = filter2;
 	}
 }
