@@ -51,7 +51,7 @@ public class Controller {
 	}
 	
 	/**
-	 * Risponde alla chiamata POST /general_stats?type='tipo'&filter='filtro'
+	 * Risponde alla chiamata POST /general_stats?type='tipo'&amp;filter='filtro'
 	 * @param type tipo di statistica generale
 	 * @param filter filtro del tweet
 	 * @return GeneralStatsMod modello di statistica generale
@@ -65,7 +65,7 @@ public class Controller {
 	}
 	
 	/**
-	 * Risponde alla chiamata POST /image_stats?type='tipo'&filter='filtro'
+	 * Risponde alla chiamata POST /image_stats?type='tipo'&amp;filter='filtro'
 	 * @param type tipo di statistica per le immagini
 	 * @param filter filtro sulla dimensione
 	 * @return ImageStatsMod modello di statistica per le immagini

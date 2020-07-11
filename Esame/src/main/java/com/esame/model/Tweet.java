@@ -1,19 +1,14 @@
 package com.esame.model;
 
-/**
- * Modello per il Tweet che contiene l'evento
- * @author Sergio Galletto
- * @author Simone Murazzo
- */
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /**
- * Cattura il tweet e ne estrapola l'evento
- * @author Simone Murazzo
+ * Modello per il tweet che cattura il tweet e ne estrapola l'evento
  * @author Sergio Galletto
+ * @author Simone Murazzo
  */
-
 public class Tweet {
 	private Event evento;
 	
@@ -21,6 +16,11 @@ public class Tweet {
 		evento = new Event(this.findType(text), this.findIntensity(text), date, min, max, med);
 	}
 	
+	/**
+	 * Metodo che restituisce il tipo di evento
+	 * @param text testo del tweet
+	 * @return String tipo di evento
+	 */
 	public String findType(String text) {
 			boolean isFlare = text.contains("flare");
 			if(isFlare)
@@ -35,6 +35,11 @@ public class Tweet {
 				return "tweet not valid";
 	}
 	
+	/**
+	 * Metodo che restituisce l'intensità dell'evento
+	 * @param text testo del tweet
+	 * @return String intensità
+	 */
 	public String findIntensity(String text) {
 		
 		String type = findType(text);
@@ -61,6 +66,10 @@ public class Tweet {
 		}
 	}
 	
+	/**
+	 * Metodo che restituisce il mese
+	 * @return String mese
+	 */
 	public String findMonth() {
 		
 		if(evento.getDate().contains("Jan"))

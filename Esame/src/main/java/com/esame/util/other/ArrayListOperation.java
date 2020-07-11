@@ -10,9 +10,19 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+/**
+ * Classe che contiene metodi per operare su ArrayList
+ * @author Simone Murazzo
+ * @author Sergio Galletto
+ */
 public class ArrayListOperation {
 	private static ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	
+	/**
+	 * Metodo che restituisce una stringa json a partire da un ArrayList
+	 * @param arTweets ArrayList di tweet
+	 * @return String in formato json
+	 */
 	public static String arrayListToString(ArrayList<Tweet> arTweets) {
 		tweets = arTweets;
 		
@@ -22,6 +32,13 @@ public class ArrayListOperation {
 		return json;
 	}
 	
+	/**
+	 * Metodo che restituisce una stringa json a partire da un ArrayList filtrando le dimensioni delle immagini
+	 * @param arTweets ArrayList di tweet
+	 * @param filter stringa filtro
+	 * @return String in formato json
+	 * @throws FilterNotFoundException se il filtro non è corretto
+	 */
 	public static String arrayListToFilteredString(ArrayList<Tweet> arTweets, String filter) throws FilterNotFoundException{
 		tweets = arTweets;
 		

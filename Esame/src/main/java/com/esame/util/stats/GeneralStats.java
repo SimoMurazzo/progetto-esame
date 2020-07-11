@@ -6,6 +6,11 @@ import com.esame.exception.InvalidTypeStatException;
 import com.esame.model.GeneralStatsMod;
 import com.esame.model.Tweet;
 
+/**
+ * Classe che implementa le statistiche generali dei tweet come data e tipo
+ * @author Simone Murazzo
+ * @author Sergio Galletto
+ */
 public class GeneralStats {
 	
 	private ArrayList<Tweet> tweets;
@@ -14,6 +19,13 @@ public class GeneralStats {
 		this.tweets = tweetlist;
 	}
 	
+	/**
+	 * Metodo che fa statistiche generali sui tweet e le restituisce con un oggetto GeneralStatsMod
+	 * @param typestat tipo di statistica
+	 * @param typefilter stringa che specifica meglio la statistica richiesta
+	 * @return GeneralStatsMod oggetto modello di statistica generale
+	 * @throws InvalidTypeStatException se la statistica non è corretta
+	 */
 	public GeneralStatsMod returnGeneralStat(String typestat, String typefilter) throws InvalidTypeStatException{
 		
 		GeneralStatsMod stat = new GeneralStatsMod();

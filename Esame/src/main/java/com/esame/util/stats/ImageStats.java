@@ -8,6 +8,11 @@ import com.esame.exception.InvalidTypeStatException;
 import com.esame.model.ImageStatsMod;
 import com.esame.model.Tweet;
 
+/**
+ * Classe che implementa statistiche sulle immagini dei tweet
+ * @author Simone Murazzo
+ * @author Sergio Galletto
+ */
 public class ImageStats {
 
 	private ArrayList<Tweet> tweets;
@@ -16,6 +21,13 @@ public class ImageStats {
 		this.tweets = tweetlist;
 	}
 	
+	/**
+	 * Metodo che fa statistiche sulle immagini dei tweet e le restituisce con un oggetto ImageStatsMod
+	 * @param typestat tipo di statistica
+	 * @param typeDim dimensione richiesta
+	 * @return ImageStatsMod oggetto modello di statistiche sulle immagini
+	 * @throws InvalidTypeStatException se la statistica non è corretta
+	 */
 	public ImageStatsMod returnImageStat(String typestat, String typeDim) throws InvalidTypeStatException{
 		
 		ImageStatsMod stat = new ImageStatsMod();
@@ -408,8 +420,8 @@ public class ImageStats {
 			}
 		}
 		default: {
-			throw new InvalidTypeStatException("Typestat or dimension not valid");
-		}
+				throw new InvalidTypeStatException("Typestat or dimension not valid");
+			}
 		}
 	}
 }

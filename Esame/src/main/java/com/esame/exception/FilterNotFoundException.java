@@ -2,7 +2,7 @@ package com.esame.exception;
 
 /**
  * Rappresenta un'eccezione personalizzata di tipo ClassNotFoundException
- * @see https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/ClassNotFoundException.html
+ * @see <a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/ClassNotFoundException.html">https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/ClassNotFoundException.html</a>
  * @author Sergio Galletto
  * @author Simone Murazzo
  */

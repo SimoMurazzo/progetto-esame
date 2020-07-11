@@ -1,7 +1,7 @@
 package com.esame.model;
 
 /**
- * Modello per le statistiche sulle immagini che contiene attributo del tweet, dimesioni
+ * Modello per le statistiche sulle immagini che contiene attributo del tweet, dimensioni
  * e statistica minima, media e massima
  * @author Sergio Galletto
  * @author Simone Murazzo

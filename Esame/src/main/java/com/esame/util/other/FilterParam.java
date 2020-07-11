@@ -1,5 +1,10 @@
 package com.esame.util.other;
 
+/**
+ * Classe che implementa oggetti filtro con attributi per definire il tipo di filtro
+ * @author Simone Murazzo
+ * @author Sergio Galletto
+ */
 public class FilterParam {
 	private String type;
 	private String filter1;
