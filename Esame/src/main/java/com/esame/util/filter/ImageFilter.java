@@ -9,7 +9,6 @@ import com.esame.util.other.ArrayListOperation;
 
 public class ImageFilter{
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
-	private ArrayList<String[]> image = new ArrayList<String[]>();
 	
 	public ImageFilter() {
 		tweets = Database.getTweet();

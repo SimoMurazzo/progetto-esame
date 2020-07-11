@@ -18,9 +18,6 @@ import com.esame.model.Tweet;
 import com.esame.service.FilterService;
 import com.esame.service.GeneralStatsService;
 import com.esame.service.ImageStatsService;
-import com.esame.util.filter.CombinedFilter;
-import com.esame.util.filter.ImageFilter;
-import com.esame.util.filter.TypeFilter;
 import com.esame.util.other.FilterParam;
 
 /**
@@ -46,14 +43,12 @@ public class Controller {
 	@RequestMapping(value="general_stats", method = RequestMethod.POST)
 	public GeneralStatsMod getGStatsWithPost(@RequestParam(value = "type") String type, @RequestParam(value = "filter") String filter) 
 			throws FilterNotFoundException, InvalidTypeStatException{
-			GeneralStatsService stats = new GeneralStatsService(type, filter);
-			return stats.instanceGen(type, filter);
+			return GeneralStatsService.instanceGen(type, filter);
 	}
 	
 	@RequestMapping(value="image_stats", method = RequestMethod.POST)
 	public ImageStatsMod  getIStatsWithPost(@RequestParam(value = "type") String type, @RequestParam(value = "filter") String filter)
 			throws FilterNotFoundException, InvalidTypeStatException{
-			ImageStatsService stats = new ImageStatsService(type, filter);
-			return stats.instanceIma(type, filter);
+			return ImageStatsService.instanceIma(type, filter);
 	}
 }

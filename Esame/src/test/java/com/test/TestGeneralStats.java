@@ -1,4 +1,4 @@
-package com.esame.Esame;
+package com.test;
 
 import java.util.ArrayList;
 

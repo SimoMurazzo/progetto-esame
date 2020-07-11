@@ -1,4 +1,4 @@
-package com.esame.Esame;
+package com.test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,8 +16,6 @@ import com.esame.model.Tweet;
 import com.esame.util.other.ArrayListOperation;
 
 class TestFilter {
-	
-	private ArrayListOperation arOperator;
 	private ArrayList<Tweet> tweetlist;
 	private Tweet tweet;
 	private String[] min = {"10", "8"};
@@ -26,7 +24,6 @@ class TestFilter {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		arOperator = new ArrayListOperation();
 		tweet = new Tweet("flare M1.19", "Jul", min, max, med);
 		tweetlist = new ArrayList<Tweet>();
 		tweetlist.add(tweet);
@@ -50,7 +47,7 @@ class TestFilter {
 				"      ]\n" + 
 				"    }\n" + 
 				"  }\n" + 
-				"]", arOperator.arrayListToFilteredString(tweetlist, "min")),
+				"]", ArrayListOperation.arrayListToFilteredString(tweetlist, "min")),
 				()->assertEquals("[\n" + 
 						"  {\n" + 
 						"    \"evento\": {\n" + 
@@ -71,18 +68,18 @@ class TestFilter {
 						"      ]\n" + 
 						"    }\n" + 
 						"  }\n" + 
-						"]", arOperator.arrayListToString(tweetlist)));
+						"]", ArrayListOperation.arrayListToString(tweetlist)));
 	}
 	
 	@Test
 	void test1() {
-		assertThrows(FilterNotFoundException.class, ()->arOperator.arrayListToFilteredString(tweetlist, " "));
+		assertThrows(FilterNotFoundException.class, ()->ArrayListOperation.arrayListToFilteredString(tweetlist, " "));
 	}
 	
 	@Test
 	void test2() throws FilterNotFoundException {
-		assertAll("not null", ()->assertNotNull(arOperator.arrayListToFilteredString(tweetlist, "min")),
-		()->assertNotNull(arOperator.arrayListToString(tweetlist)));
+		assertAll("not null", ()->assertNotNull(ArrayListOperation.arrayListToFilteredString(tweetlist, "min")),
+		()->assertNotNull(ArrayListOperation.arrayListToString(tweetlist)));
 	}
 
 }

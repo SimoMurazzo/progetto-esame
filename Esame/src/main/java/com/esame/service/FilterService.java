@@ -1,7 +1,5 @@
 package com.esame.service;
 
-import java.util.ArrayList;
-
 import com.esame.exception.FilterNotFoundException;
 import com.esame.util.filter.CombinedFilter;
 import com.esame.util.filter.ImageFilter;
