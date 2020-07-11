@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.esame.database.Database;
 
+/** All'avvio effettua il download del dataset ed avvia l'applicativo Spring.
+ *	@author Sergio Galletto
+ *  @author Simone Murazzo
+*/
 @SpringBootApplication
 public class EsameApplication {
 

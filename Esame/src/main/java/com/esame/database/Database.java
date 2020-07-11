@@ -15,6 +15,11 @@ import org.json.simple.parser.ParseException;
 
 import com.esame.model.Tweet;
 
+/**
+ * Inizializza i dati utili all'applicativo
+ * @author Sergio Galletto
+ * @author Simone Murazzo
+ */
 public class Database {
 	private static String[] min = {" ", " "};
 	private static String[] med = {" ", " "};
@@ -27,6 +32,11 @@ public class Database {
 		return tweets;
 	}
 	
+	/**
+	 * Apre una connessione http a Twitter ed esegue il download dei dati necessari
+	 * gestice le eccezioni sulla connessione non riuscita e il parsing senza lanciarle
+	 * @param url indirizzo utente twitter passato da EsameApplication
+	 */
 	public static void download(String url) {
 		try {
 			URLConnection twitterConnection = new URL(url).openConnection();

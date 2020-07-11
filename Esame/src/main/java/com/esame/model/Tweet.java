@@ -1,7 +1,11 @@
 package com.esame.model;
 
+/**
+ * Modello per il Tweet che contiene l'evento
+ * @author Sergio Galletto
+ * @author Simone Murazzo
+ */
 import java.util.regex.Pattern;
-
 import java.util.regex.Matcher;
 
 /**

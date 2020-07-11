@@ -1,5 +1,10 @@
 package com.esame.model;
 
+/**
+ * Modello per le statistiche generali che contiene l'attributo del tweet, il tipo e il contatore
+ * @author Sergio Galletto
+ * @author Simone Murazzo
+ */
 public class GeneralStatsMod {
 
 	private String tweetattribute;

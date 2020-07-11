@@ -2,7 +2,8 @@ package com.esame.model;
 
 
 /**
- * Modello per evento
+ * Modello per evento che contiene tipo, intensità dell'evento, data del tweet,
+ * dimesione dell'immagine
  * @author Simone Murazzo
  * @author Sergio Galletto
  */

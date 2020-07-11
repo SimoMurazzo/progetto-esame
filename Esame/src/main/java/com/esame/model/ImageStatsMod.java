@@ -1,5 +1,11 @@
 package com.esame.model;
 
+/**
+ * Modello per le statistiche sulle immagini che contiene attributo del tweet, dimesioni
+ * e statistica minima, media e massima
+ * @author Sergio Galletto
+ * @author Simone Murazzo
+ */
 public class ImageStatsMod {
 
 	private String tweetattribute;
