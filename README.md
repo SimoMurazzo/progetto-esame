@@ -76,25 +76,25 @@ La seguente tabella mostra i filtri disponibili.
 <img src="./Esame/model/model-progetto-esame/model-progetto-esame-Controller.png" width="400">
 
 *  **Package com.esame.database**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Database.png" width="400">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Database.png" width="350" height="250">
 
 *  **Package com.esame.exception**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Exception.png" width="400">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Exception.png" width="700" height="300">
 
 *  **Package com.esame.model**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Model.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Model.png" width="1000" height="700">
 
 *  **Package com.esame.service**
 <img src="./Esame/model/model-progetto-esame/model-progetto-esame-Service.png" width="600">
 
 *  **Package com.esame.util.filter**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-filter.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-filter.png" width="400" height="600">
 
 *  **Package com.esame.util.stats**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-stats.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-stats.png" width="400" height="300">
 
 *  **Package com.esame.util.other**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-other.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-other.png" width="800">
 
 ### Chiamate
 
@@ -105,19 +105,19 @@ Controller effettua una chiamata tramite il metodo 'getTweet', che inizializza u
 *  **Chiamata POST /tweets**
 Controller effettua una chiamata tramite il metodo 'tweetInstance', con i parametri forniti dalla classe 'FilterParam'.
 Tramite i sucessivi metodi 'get' e 'arrayListToFilteredString' filtra i dati e li riporta al client in formato JSON.
-<img src="./Esame/model/model-progetto-esame/SequencePOSTtweets.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/SequencePOSTtweets.png" width="1000" height="300">
 
 *  **Chiamata POST /general_stats?type="tipo"&filter="filtro"**
 L'ArrayList sul quale fare le statistiche viene preso come indicato su *GET /tweets*. Viene passato il nome del campo sul quale si vogliono effettuare le statistiche
 a 'instanceGen' il quale istanzia l'oggetto 'GeneralStats'. Quest'ultimo tramite il metodo 'returnGeneralStats' eseguirà il calcolo statistico che verrà poi incapsulato
 nell'oggetto, e infine restituito al client in formato JSON.
-<img src="./Esame/model/model-progetto-esame/SequencePOSTgeneral.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/SequencePOSTgeneral.png" width="1000" height="350">
 
 *  **Chiamata POST /image_stats?type="tipo"&filter="filtro"**
 L'ArrayList sul quale fare le statistiche viene preso come indicato su *GET /tweets*. Viene passato il nome del campo sul quale si vogliono effettuare le statistiche
 a 'instanceIma' il quale istanzia l'oggetto 'ImageStats'. Quest'ultimo tramite il metodo 'returnImageStats' eseguirà il calcolo statistico che verrà poi incapsulato
 nell'oggetto, e infine restituito al client in formato JSON.
-<img src="./Esame/model/model-progetto-esame/SequencePOSTimage.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/SequencePOSTimage.png" width="1000" height="400">
 
 ## Software Utilizzati
 * [Eclipse](https://www.eclipse.org) - Ambiente di sviluppo integrato
