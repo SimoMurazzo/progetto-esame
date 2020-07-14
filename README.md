@@ -41,7 +41,7 @@ Su Windows:
 - infine tramite cmd o PowerShell si possono seguire gli stessi passaggi riportati per linux
 Attenzione: Maven potrebbe fallire nel build dei file test, ma l'applicazione si avvia lo stesso.
 
-L'applicazione srà attiva in ascolto all'indirizzo http://localhost:8080.
+L'applicazione sarà attiva in ascolto all'indirizzo http://localhost:8080.
 
 ### Effettuare richieste
 
@@ -67,7 +67,7 @@ La seguente tabella mostra i filtri disponibili.
 ### Package
 
 <p align="center">
-  <img src="./Esame/model/model-progetto-esame/     " width="800">
+  <img src="./Esame/model/model-progetto-esame/model-progetto-esame-package.png" width="800">
 </p>
 
 ### Classi
@@ -88,11 +88,13 @@ La seguente tabella mostra i filtri disponibili.
 <img src="./Esame/model/model-progetto-esame/model-progetto-esame-Service.png" width="600">
 
 *  **Package com.esame.util.filter**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Filter.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-filter.png" width="1000">
 
 *  **Package com.esame.util.stats**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Stats.png" width="1000">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-stats.png" width="1000">
 
+*  **Package com.esame.util.other**
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-other.png" width="1000">
 
 ### Chiamate
 
