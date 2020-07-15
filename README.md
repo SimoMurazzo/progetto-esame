@@ -40,8 +40,6 @@ Su Windows:
 - scaricare maven e java jdk ed aggiungerli alle variabili d'ambiente (vedere guide apposite)
 - infine tramite cmd o PowerShell si possono seguire gli stessi passaggi riportati per linux
 
-Attenzione: Maven potrebbe fallire nel build dei file test, ma l'applicazione si avvia lo stesso.
-
 L'applicazione sarà attiva in ascolto all'indirizzo http://localhost:8080.
 
 ### Effettuare richieste
