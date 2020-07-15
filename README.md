@@ -87,10 +87,10 @@ La seguente tabella mostra i filtri disponibili.
 <img src="./Esame/model/model-progetto-esame/model-progetto-esame-Model.png" width="1000" height="700">
 
 *  **Package com.esame.service**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Service.png" width="600">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Service.png" width="500">
 
 *  **Package com.esame.util.filter**
-<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-filter.png" width="400" height="600">
+<img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-filter.png" width="300" height="500">
 
 *  **Package com.esame.util.stats**
 <img src="./Esame/model/model-progetto-esame/model-progetto-esame-Util-stats.png" width="400" height="300">
@@ -126,7 +126,12 @@ nell'oggetto, e infine restituito al client in formato JSON.
 
 `POST /general_stats?tipo="tipo"&filter="filtro"`
 
-<img src="./Esame/model/model-progetto-esame/Esempio1Postman.png" width="500" height="300">
+<img src="./Esame/model/model-progetto-esame/Esempio1Postman.png" width="800" height="500">
+
+`POST /tweets`
+
+<img src="./Esame/model/model-progetto-esame/Esempio2Postman.png" width="800" height="500">
+
 
 ## Software Utilizzati
 * [Eclipse](https://www.eclipse.org) - Ambiente di sviluppo integrato
