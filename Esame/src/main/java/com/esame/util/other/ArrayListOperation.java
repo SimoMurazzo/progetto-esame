@@ -51,7 +51,6 @@ public class ArrayListOperation {
 		JsonObject jsonOb = new JsonObject();
 		for(int i = 0; i < jsonAr.size(); i++) {
 			jsonOb = jsonAr.get(i).getAsJsonObject();
-				System.out.println(jsonOb);
 				switch(filter) {
 					case "min":
 						jsonOb.get("evento").getAsJsonObject().remove("max");

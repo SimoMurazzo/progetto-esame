@@ -1,0 +1,1742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_b_PnEMROEeqRxpo29PUYjg" name="model-progetto-esame">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_cDRygMROEeqRxpo29PUYjg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_zHCvcMRWEeqRxpo29PUYjg" name="Esame">
+      <packagedElement xmi:type="uml:Package" xmi:id="_zHzkcMRWEeqRxpo29PUYjg" name="com">
+        <packagedElement xmi:type="uml:Package" xmi:id="_zH0LgMRWEeqRxpo29PUYjg" name="esame">
+          <packagedElement xmi:type="uml:Class" xmi:id="_zH0LgcRWEeqRxpo29PUYjg" name="EsameApplication" visibility="public">
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zH314sRWEeqRxpo29PUYjg" name="main" specification="_zH3O0MRWEeqRxpo29PUYjg">
+              <language>JAVA</language>
+              <body>
+    Database.download(&quot;https://wd4hfxnxxa.execute-api.us-east-2.amazonaws.com/dev/user/1.1/statuses/user_timeline.json?screen_name=_spaceweather_&amp;count=100&quot;);
+    SpringApplication.run(EsameApplication.class, args);
+</body>
+            </ownedBehavior>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_zH3O0MRWEeqRxpo29PUYjg" name="main" visibility="public" isStatic="true" method="_zH314sRWEeqRxpo29PUYjg">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH3O0cRWEeqRxpo29PUYjg" name="args">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zH314MRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zH314cRWEeqRxpo29PUYjg" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_zH5rEMRWEeqRxpo29PUYjg" name="controller">
+            <packagedElement xmi:type="uml:Class" xmi:id="_zH5rEcRWEeqRxpo29PUYjg" name="Controller" visibility="public">
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zH65M8RWEeqRxpo29PUYjg" name="getTweets" specification="_zH6SIMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return Database.getTweet();
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zH9VccRWEeqRxpo29PUYjg" name="getTweetsWithPost" specification="_zH8HUcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return FilterService.tweetInstance(filter.getType(), filter.getFilter1(), filter.getFilter2());
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zH98hMRWEeqRxpo29PUYjg" name="getGStatsWithPost" specification="_zH9VcsRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return GeneralStatsService.instanceGen(type, filter);
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zH_KocRWEeqRxpo29PUYjg" name="getIStatsWithPost" specification="_zH-jkMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return ImageStatsService.instanceIma(type, filter);
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zH6SIMRWEeqRxpo29PUYjg" name="getTweets" visibility="public" method="_zH65M8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH65MMRWEeqRxpo29PUYjg" type="_zH6SIsRWEeqRxpo29PUYjg" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zH65McRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zH65MsRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zH8HUcRWEeqRxpo29PUYjg" name="getTweetsWithPost" visibility="public" method="_zH9VccRWEeqRxpo29PUYjg" raisedException="_zH9VcMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH8uYMRWEeqRxpo29PUYjg" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH8uYcRWEeqRxpo29PUYjg" name="filter" type="_zH8HUMRWEeqRxpo29PUYjg"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zH9VcsRWEeqRxpo29PUYjg" name="getGStatsWithPost" visibility="public" method="_zH98hMRWEeqRxpo29PUYjg" raisedException="_zH9VcMRWEeqRxpo29PUYjg _zH98g8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH98gMRWEeqRxpo29PUYjg" type="_zH9Vc8RWEeqRxpo29PUYjg" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH98gcRWEeqRxpo29PUYjg" name="type"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH98gsRWEeqRxpo29PUYjg" name="filter"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zH-jkMRWEeqRxpo29PUYjg" name="getIStatsWithPost" visibility="public" method="_zH_KocRWEeqRxpo29PUYjg" raisedException="_zH9VcMRWEeqRxpo29PUYjg _zH98g8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH-jksRWEeqRxpo29PUYjg" type="_zH-jkcRWEeqRxpo29PUYjg" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH-jk8RWEeqRxpo29PUYjg" name="type"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zH_KoMRWEeqRxpo29PUYjg" name="filter"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_zH6SIcRWEeqRxpo29PUYjg" name="model">
+            <packagedElement xmi:type="uml:Class" xmi:id="_zH6SIsRWEeqRxpo29PUYjg" name="Tweet" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zI8M4MRWEeqRxpo29PUYjg" name="evento" visibility="private" type="_zIdrwMRWEeqRxpo29PUYjg" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJCTgMRWEeqRxpo29PUYjg" name="Tweet" specification="_zI8z8MRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    evento = new Event(this.findType(text), this.findIntensity(text), date, min, max, med);
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJDhocRWEeqRxpo29PUYjg" name="findType" specification="_zJC6kMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    boolean isFlare = text.contains(&quot;flare&quot;);
+    if (isFlare)
+        return &quot;flare&quot;;
+    boolean isConditions = text.contains(&quot;geomagnetic conditions&quot;);
+    if (isConditions)
+        return &quot;geomagnetic conditions&quot;;
+    boolean isStorm = text.contains(&quot;geomagnetic storm&quot;);
+    if (isStorm)
+        return &quot;geomagnetic storm&quot;;
+    else
+        return &quot;tweet not valid&quot;;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJEvwMRWEeqRxpo29PUYjg" name="findIntensity" specification="_zJEIsMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    String type = findType(text);
+    String intensity = &quot;&quot;;
+    if (type == &quot;flare&quot;) {
+        Pattern intensityP = Pattern.compile(&quot;[ABCMX][0-9]\\.*[0-9]*&quot;);
+        Matcher intensityM = intensityP.matcher(text);
+        while (intensityM.find()) intensity = intensityM.group(0);
+        return intensity;
+    } else if (type == &quot;geomagnetic conditions&quot; || type == &quot;geomagnetic storm&quot;) {
+        Pattern intensityP = Pattern.compile(&quot;Kp[0-9]&quot;);
+        Matcher intensityM = intensityP.matcher(text);
+        while (intensityM.find()) intensity = intensityM.group(0);
+        return intensity;
+    } else {
+        intensity = &quot;intensity not valid&quot;;
+        return intensity;
+    }
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJEvw8RWEeqRxpo29PUYjg" name="findMonth" specification="_zJEvwcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    if (evento.getDate().contains(&quot;Jan&quot;))
+        return &quot;Jan&quot;;
+    else if (evento.getDate().contains(&quot;Feb&quot;))
+        return &quot;Feb&quot;;
+    else if (evento.getDate().contains(&quot;Mar&quot;))
+        return &quot;Mar&quot;;
+    else if (evento.getDate().contains(&quot;Apr&quot;))
+        return &quot;Apr&quot;;
+    else if (evento.getDate().contains(&quot;May&quot;))
+        return &quot;May&quot;;
+    else if (evento.getDate().contains(&quot;Jun&quot;))
+        return &quot;Jun&quot;;
+    else if (evento.getDate().contains(&quot;Jul&quot;))
+        return &quot;Jul&quot;;
+    else if (evento.getDate().contains(&quot;Aug&quot;))
+        return &quot;Aug&quot;;
+    else if (evento.getDate().contains(&quot;Sep&quot;))
+        return &quot;Sep&quot;;
+    else if (evento.getDate().contains(&quot;Oct&quot;))
+        return &quot;Oct&quot;;
+    else if (evento.getDate().contains(&quot;Nov&quot;))
+        return &quot;Nov&quot;;
+    else
+        return &quot;Dec&quot;;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJFW0MRWEeqRxpo29PUYjg" name="getEvento" specification="_zJEvxMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return evento;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJFW08RWEeqRxpo29PUYjg" name="setEvento" specification="_zJFW0cRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.evento = evento;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zI8z8MRWEeqRxpo29PUYjg" name="Tweet" visibility="public" method="_zJCTgMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI_QMMRWEeqRxpo29PUYjg" name="text"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI_3QMRWEeqRxpo29PUYjg" name="date"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJAeUMRWEeqRxpo29PUYjg" name="min">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJAeUcRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJAeUsRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJBFYMRWEeqRxpo29PUYjg" name="max">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJBFYcRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJBFYsRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJBscMRWEeqRxpo29PUYjg" name="med">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJBsccRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJBscsRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJC6kMRWEeqRxpo29PUYjg" name="findType" visibility="public" method="_zJDhocRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJC6kcRWEeqRxpo29PUYjg" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJDhoMRWEeqRxpo29PUYjg" name="text"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJEIsMRWEeqRxpo29PUYjg" name="findIntensity" visibility="public" method="_zJEvwMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJEIscRWEeqRxpo29PUYjg" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJEIssRWEeqRxpo29PUYjg" name="text"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJEvwcRWEeqRxpo29PUYjg" name="findMonth" visibility="public" method="_zJEvw8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJEvwsRWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJEvxMRWEeqRxpo29PUYjg" name="getEvento" visibility="public" method="_zJFW0MRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJEvxcRWEeqRxpo29PUYjg" type="_zIdrwMRWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJFW0cRWEeqRxpo29PUYjg" name="setEvento" visibility="public" method="_zJFW08RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJFW0sRWEeqRxpo29PUYjg" name="evento" type="_zIdrwMRWEeqRxpo29PUYjg"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_zH9Vc8RWEeqRxpo29PUYjg" name="GeneralStatsMod" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIv_oMRWEeqRxpo29PUYjg" name="tweetattribute" visibility="private" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIwmsMRWEeqRxpo29PUYjg" name="attributetype" visibility="private" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIwmscRWEeqRxpo29PUYjg" name="counter" visibility="private" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIyb4cRWEeqRxpo29PUYjg" name="GeneralStatsMod" specification="_zIwmssRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zI2tUMRWEeqRxpo29PUYjg" name="GeneralStatsMod" specification="_zIzC8MRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.tweetattribute = tweetattribute;
+    this.attributetype = attributetype;
+    this.counter = counter;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zI3UYcRWEeqRxpo29PUYjg" name="getTweetattribute" specification="_zI2tUcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return tweetattribute;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zI4igcRWEeqRxpo29PUYjg" name="getAttributetype" specification="_zI37cMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return attributetype;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zI5JksRWEeqRxpo29PUYjg" name="getCounter" specification="_zI5JkMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return counter;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zI6XscRWEeqRxpo29PUYjg" name="setTweetAttribute" specification="_zI5woMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.tweetattribute = tweetattribute;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zI6-wMRWEeqRxpo29PUYjg" name="setAttributeType" specification="_zI6XssRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.attributetype = attributetype;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zI6-w8RWEeqRxpo29PUYjg" name="setCounter" specification="_zI6-wcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.counter = counter;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIwmssRWEeqRxpo29PUYjg" name="GeneralStatsMod" visibility="public" method="_zIyb4cRWEeqRxpo29PUYjg"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIzC8MRWEeqRxpo29PUYjg" name="GeneralStatsMod" visibility="public" method="_zI2tUMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI1fMMRWEeqRxpo29PUYjg" name="tweetattribute"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI2GQMRWEeqRxpo29PUYjg" name="counter">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI2GQcRWEeqRxpo29PUYjg" name="attributetype"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zI2tUcRWEeqRxpo29PUYjg" name="getTweetattribute" visibility="public" method="_zI3UYcRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI3UYMRWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zI37cMRWEeqRxpo29PUYjg" name="getAttributetype" visibility="public" method="_zI4igcRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI4igMRWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zI5JkMRWEeqRxpo29PUYjg" name="getCounter" visibility="public" method="_zI5JksRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI5JkcRWEeqRxpo29PUYjg" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zI5woMRWEeqRxpo29PUYjg" name="setTweetAttribute" visibility="public" method="_zI6XscRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI6XsMRWEeqRxpo29PUYjg" name="tweetattribute"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zI6XssRWEeqRxpo29PUYjg" name="setAttributeType" visibility="public" method="_zI6-wMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI6Xs8RWEeqRxpo29PUYjg" name="attributetype"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zI6-wcRWEeqRxpo29PUYjg" name="setCounter" visibility="public" method="_zI6-w8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zI6-wsRWEeqRxpo29PUYjg" name="counter">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_zH-jkcRWEeqRxpo29PUYjg" name="ImageStatsMod" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zJGk8MRWEeqRxpo29PUYjg" name="tweetattribute" visibility="private" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zJGk8cRWEeqRxpo29PUYjg" name="imageDim" visibility="private" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zJGk8sRWEeqRxpo29PUYjg" name="med" visibility="private" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zJGk88RWEeqRxpo29PUYjg" name="min" visibility="private" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zJHMAMRWEeqRxpo29PUYjg" name="max" visibility="private" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJJoQMRWEeqRxpo29PUYjg" name="ImageStatsMod" specification="_zJHMAcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJN5sMRWEeqRxpo29PUYjg" name="ImageStatsMod" specification="_zJKPUMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.tweetattribute = tweetattribute;
+    this.imageDim = imageDim;
+    this.med = med;
+    this.min = min;
+    this.max = max;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJOgwcRWEeqRxpo29PUYjg" name="getTweetattribute" specification="_zJN5scRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return tweetattribute;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJPH0cRWEeqRxpo29PUYjg" name="getImageDim" specification="_zJOgwsRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return imageDim;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJPH1MRWEeqRxpo29PUYjg" name="getMed" specification="_zJPH0sRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return med;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJPu4cRWEeqRxpo29PUYjg" name="getMin" specification="_zJPH1cRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return min;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJPu5MRWEeqRxpo29PUYjg" name="getMax" specification="_zJPu4sRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return max;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJQV8cRWEeqRxpo29PUYjg" name="setTweetattribute" specification="_zJPu5cRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.tweetattribute = tweetattribute;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJRkEMRWEeqRxpo29PUYjg" name="setImageDim" specification="_zJQ9AMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.imageDim = imageDim;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJSLIcRWEeqRxpo29PUYjg" name="setMed" specification="_zJRkEcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.med = med;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJTZQcRWEeqRxpo29PUYjg" name="setMin" specification="_zJSyMMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.min = min;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJUnYMRWEeqRxpo29PUYjg" name="setMax" specification="_zJUAUMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.max = max;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJHMAcRWEeqRxpo29PUYjg" name="ImageStatsMod" visibility="public" method="_zJJoQMRWEeqRxpo29PUYjg"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJKPUMRWEeqRxpo29PUYjg" name="ImageStatsMod" visibility="public" method="_zJN5sMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJMEgMRWEeqRxpo29PUYjg" name="tweetattribute"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJMrkMRWEeqRxpo29PUYjg" name="imageDim"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJMrkcRWEeqRxpo29PUYjg" name="med">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJNSoMRWEeqRxpo29PUYjg" name="min">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJNSocRWEeqRxpo29PUYjg" name="max">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJN5scRWEeqRxpo29PUYjg" name="getTweetattribute" visibility="public" method="_zJOgwcRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJOgwMRWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJOgwsRWEeqRxpo29PUYjg" name="getImageDim" visibility="public" method="_zJPH0cRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJPH0MRWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJPH0sRWEeqRxpo29PUYjg" name="getMed" visibility="public" method="_zJPH1MRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJPH08RWEeqRxpo29PUYjg" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJPH1cRWEeqRxpo29PUYjg" name="getMin" visibility="public" method="_zJPu4cRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJPu4MRWEeqRxpo29PUYjg" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJPu4sRWEeqRxpo29PUYjg" name="getMax" visibility="public" method="_zJPu5MRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJPu48RWEeqRxpo29PUYjg" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJPu5cRWEeqRxpo29PUYjg" name="setTweetattribute" visibility="public" method="_zJQV8cRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJQV8MRWEeqRxpo29PUYjg" name="tweetattribute"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJQ9AMRWEeqRxpo29PUYjg" name="setImageDim" visibility="public" method="_zJRkEMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJQ9AcRWEeqRxpo29PUYjg" name="imageDim"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJRkEcRWEeqRxpo29PUYjg" name="setMed" visibility="public" method="_zJSLIcRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJSLIMRWEeqRxpo29PUYjg" name="med">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJSyMMRWEeqRxpo29PUYjg" name="setMin" visibility="public" method="_zJTZQcRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJTZQMRWEeqRxpo29PUYjg" name="min">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJUAUMRWEeqRxpo29PUYjg" name="setMax" visibility="public" method="_zJUnYMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJUAUcRWEeqRxpo29PUYjg" name="max">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_zIdrwMRWEeqRxpo29PUYjg" name="Event" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIeS0MRWEeqRxpo29PUYjg" name="type" visibility="private" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIeS0cRWEeqRxpo29PUYjg" name="intensity" visibility="private" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIfg8MRWEeqRxpo29PUYjg" name="date" visibility="private" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIfg8cRWEeqRxpo29PUYjg" name="min" visibility="private" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIgIAMRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIgIAcRWEeqRxpo29PUYjg" value="*"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIgIAsRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>new String[2]</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIgvEMRWEeqRxpo29PUYjg" name="max" visibility="private" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIhWIMRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIhWIcRWEeqRxpo29PUYjg" value="*"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIhWIsRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>new String[2]</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIh9MMRWEeqRxpo29PUYjg" name="med" visibility="private" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIh9McRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIikQMRWEeqRxpo29PUYjg" value="*"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIikQcRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>new String[2]</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIm1s8RWEeqRxpo29PUYjg" name="Event" specification="_zIjLUMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.type = type;
+    this.intensity = intensity;
+    this.date = date;
+    this.min = min.clone();
+    this.max = max.clone();
+    this.med = med.clone();
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIncwcRWEeqRxpo29PUYjg" name="setType" specification="_zIm1tMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.type = type;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIncxMRWEeqRxpo29PUYjg" name="getType" specification="_zIncwsRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return type;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIoD0sRWEeqRxpo29PUYjg" name="setIntensity" specification="_zIoD0MRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.intensity = intensity;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIoq4cRWEeqRxpo29PUYjg" name="getIntensity" specification="_zIoD08RWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return intensity;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIpR8MRWEeqRxpo29PUYjg" name="setDate" specification="_zIoq4sRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    this.date = date;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIqgEcRWEeqRxpo29PUYjg" name="getDate" specification="_zIp5AMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return date;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIsVQMRWEeqRxpo29PUYjg" name="getMin" specification="_zIrHIMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return min;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zItjYMRWEeqRxpo29PUYjg" name="getMax" specification="_zIsVQcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return max;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIuxgcRWEeqRxpo29PUYjg" name="getMed" specification="_zItjYcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return med;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIjLUMRWEeqRxpo29PUYjg" name="Event" visibility="public" method="_zIm1s8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIlAgMRWEeqRxpo29PUYjg" name="type"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIlnkMRWEeqRxpo29PUYjg" name="intensity"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIlnkcRWEeqRxpo29PUYjg" name="date"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zImOoMRWEeqRxpo29PUYjg" name="min">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zImOocRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zImOosRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zImOo8RWEeqRxpo29PUYjg" name="max">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zImOpMRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zImOpcRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIm1sMRWEeqRxpo29PUYjg" name="med">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIm1scRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIm1ssRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIm1tMRWEeqRxpo29PUYjg" name="setType" visibility="public" method="_zIncwcRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIncwMRWEeqRxpo29PUYjg" name="type"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIncwsRWEeqRxpo29PUYjg" name="getType" visibility="public" method="_zIncxMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIncw8RWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIoD0MRWEeqRxpo29PUYjg" name="setIntensity" visibility="public" method="_zIoD0sRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIoD0cRWEeqRxpo29PUYjg" name="intensity"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIoD08RWEeqRxpo29PUYjg" name="getIntensity" visibility="public" method="_zIoq4cRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIoq4MRWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIoq4sRWEeqRxpo29PUYjg" name="setDate" visibility="public" method="_zIpR8MRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIoq48RWEeqRxpo29PUYjg" name="date"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIp5AMRWEeqRxpo29PUYjg" name="getDate" visibility="public" method="_zIqgEcRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIqgEMRWEeqRxpo29PUYjg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIrHIMRWEeqRxpo29PUYjg" name="getMin" visibility="public" method="_zIsVQMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIruMMRWEeqRxpo29PUYjg" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIruMcRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIruMsRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIsVQcRWEeqRxpo29PUYjg" name="getMax" visibility="public" method="_zItjYMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIs8UMRWEeqRxpo29PUYjg" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIs8UcRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIs8UsRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zItjYcRWEeqRxpo29PUYjg" name="getMed" visibility="public" method="_zIuxgcRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIuKcMRWEeqRxpo29PUYjg" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIuKccRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIuxgMRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_zH7gQMRWEeqRxpo29PUYjg" name="util">
+            <packagedElement xmi:type="uml:Package" xmi:id="_zH7gQcRWEeqRxpo29PUYjg" name="other">
+              <packagedElement xmi:type="uml:Class" xmi:id="_zH8HUMRWEeqRxpo29PUYjg" name="FilterParam" visibility="public">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zJ4BAMRWEeqRxpo29PUYjg" name="type" visibility="private" isUnique="false"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zJ4oEMRWEeqRxpo29PUYjg" name="filter1" visibility="private" isUnique="false"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zJ4oEcRWEeqRxpo29PUYjg" name="filter2" visibility="private" isUnique="false"/>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJ8ScMRWEeqRxpo29PUYjg" name="FilterParam" specification="_zJ4oEsRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    this.type = type;
+    this.filter1 = filter1;
+    this.filter2 = filter2;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJ85gcRWEeqRxpo29PUYjg" name="getType" specification="_zJ8SccRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    return type;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJ9gksRWEeqRxpo29PUYjg" name="setType" specification="_zJ9gkMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    this.type = type;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJ-uscRWEeqRxpo29PUYjg" name="getFilter1" specification="_zJ-HoMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    return filter1;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJ_80MRWEeqRxpo29PUYjg" name="setFilter1" specification="_zJ_VwMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    this.filter1 = filter1;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zKAj4cRWEeqRxpo29PUYjg" name="getFilter2" specification="_zJ_80cRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    return filter2;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zKByAMRWEeqRxpo29PUYjg" name="setFilter2" specification="_zKBK8MRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    this.filter2 = filter2;
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ4oEsRWEeqRxpo29PUYjg" name="FilterParam" visibility="public" method="_zJ8ScMRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ7EUMRWEeqRxpo29PUYjg" name="type"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ7rYMRWEeqRxpo29PUYjg" name="filter1"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ7rYcRWEeqRxpo29PUYjg" name="filter2"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ8SccRWEeqRxpo29PUYjg" name="getType" visibility="public" method="_zJ85gcRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ85gMRWEeqRxpo29PUYjg" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ9gkMRWEeqRxpo29PUYjg" name="setType" visibility="public" method="_zJ9gksRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ9gkcRWEeqRxpo29PUYjg" name="type"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ-HoMRWEeqRxpo29PUYjg" name="getFilter1" visibility="public" method="_zJ-uscRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ-usMRWEeqRxpo29PUYjg" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ_VwMRWEeqRxpo29PUYjg" name="setFilter1" visibility="public" method="_zJ_80MRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ_VwcRWEeqRxpo29PUYjg" name="filter1"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ_80cRWEeqRxpo29PUYjg" name="getFilter2" visibility="public" method="_zKAj4cRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKAj4MRWEeqRxpo29PUYjg" direction="return"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zKBK8MRWEeqRxpo29PUYjg" name="setFilter2" visibility="public" method="_zKByAMRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKBK8cRWEeqRxpo29PUYjg" name="filter2"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_zKCZEMRWEeqRxpo29PUYjg" name="ArrayListOperation" visibility="public">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zKDAIMRWEeqRxpo29PUYjg" name="tweets" visibility="private" isStatic="true" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zKDAIcRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zKDAIsRWEeqRxpo29PUYjg" value="*"/>
+                  <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zKDAI8RWEeqRxpo29PUYjg" name="defaultValue">
+                    <language>JAVA</language>
+                    <body>new ArrayList&lt;Tweet>()</body>
+                  </defaultValue>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zKEOQMRWEeqRxpo29PUYjg" name="arrayListToString" specification="_zKDAJMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    tweets = arTweets;
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    String json = gson.toJson(tweets);
+    return json;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zKH4oMRWEeqRxpo29PUYjg" name="arrayListToFilteredString" specification="_zKFcYMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    tweets = arTweets;
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    String json = gson.toJson(tweets);
+    JsonArray jsonAr = gson.fromJson(json, JsonElement.class).getAsJsonArray();
+    JsonArray finalJsonAr = new JsonArray();
+    JsonObject jsonOb = new JsonObject();
+    for (int i = 0; i &lt; jsonAr.size(); i++) {
+        jsonOb = jsonAr.get(i).getAsJsonObject();
+        System.out.println(jsonOb);
+        switch(filter) {
+            case &quot;min&quot;:
+                jsonOb.get(&quot;evento&quot;).getAsJsonObject().remove(&quot;max&quot;);
+                jsonOb.get(&quot;evento&quot;).getAsJsonObject().remove(&quot;med&quot;);
+                break;
+            case &quot;max&quot;:
+                jsonOb.get(&quot;evento&quot;).getAsJsonObject().remove(&quot;min&quot;);
+                jsonOb.get(&quot;evento&quot;).getAsJsonObject().remove(&quot;med&quot;);
+                break;
+            case &quot;med&quot;:
+                jsonOb.get(&quot;evento&quot;).getAsJsonObject().remove(&quot;min&quot;);
+                jsonOb.get(&quot;evento&quot;).getAsJsonObject().remove(&quot;max&quot;);
+                break;
+            default:
+                throw new FilterNotFoundException(&quot;Invalid image filter&quot;);
+        }
+        finalJsonAr.add(jsonOb);
+    }
+    String finalJson = gson.toJson(finalJsonAr);
+    return finalJson;
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zKDAJMRWEeqRxpo29PUYjg" name="arrayListToString" visibility="public" isStatic="true" method="_zKEOQMRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKDnMMRWEeqRxpo29PUYjg" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKDnMcRWEeqRxpo29PUYjg" name="arTweets" type="_zH6SIsRWEeqRxpo29PUYjg">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zKDnMsRWEeqRxpo29PUYjg"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zKDnM8RWEeqRxpo29PUYjg" value="*"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zKFcYMRWEeqRxpo29PUYjg" name="arrayListToFilteredString" visibility="public" isStatic="true" method="_zKH4oMRWEeqRxpo29PUYjg" raisedException="_zH9VcMRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKGDcMRWEeqRxpo29PUYjg" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKGqgMRWEeqRxpo29PUYjg" name="arTweets" type="_zH6SIsRWEeqRxpo29PUYjg">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zKGqgcRWEeqRxpo29PUYjg"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zKHRkMRWEeqRxpo29PUYjg" value="*"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKHRkcRWEeqRxpo29PUYjg" name="filter"/>
+                </ownedOperation>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_zJaG8MRWEeqRxpo29PUYjg" name="stats">
+              <packagedElement xmi:type="uml:Class" xmi:id="_zJaG8cRWEeqRxpo29PUYjg" name="ImageStats" visibility="public">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zKZlcMRWEeqRxpo29PUYjg" name="tweets" visibility="private" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zKaMgMRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zKaMgcRWEeqRxpo29PUYjg" value="*"/>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zKdP0sRWEeqRxpo29PUYjg" name="ImageStats" specification="_zKazkMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    this.tweets = tweetlist;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zKgTIMRWEeqRxpo29PUYjg" name="returnImageStat" specification="_zKd24MRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    ImageStatsMod stat = new ImageStatsMod();
+    int min = 0;
+    double med = 0;
+    int max = 0;
+    switch(typestat) {
+        case &quot;min&quot;:
+            {
+                if (typeDim.equals(&quot;w&quot;)) {
+                    min = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get()).map(Object::toString).map(Integer::parseInt).min(Comparator.comparingInt(Integer::valueOf)).get();
+                    med = (double) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get()).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get()).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else if (typeDim.equals(&quot;h&quot;)) {
+                    min = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce(( first,  second) -> second)).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else {
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(&quot;Dimension not valid!&quot;);
+                    stat.setMin(0);
+                    stat.setMed(0);
+                    stat.setMax(0);
+                    return stat;
+                }
+            }
+        case &quot;med&quot;:
+            {
+                if (typeDim.equals(&quot;w&quot;)) {
+                    min = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get()).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get()).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get()).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else if (typeDim.equals(&quot;h&quot;)) {
+                    min = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce(( first,  second) -> second)).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else {
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(&quot;Dimension not valid!&quot;);
+                    stat.setMin(0);
+                    stat.setMed(0);
+                    stat.setMax(0);
+                    return stat;
+                }
+            }
+        case &quot;max&quot;:
+            {
+                if (typeDim.equals(&quot;w&quot;)) {
+                    min = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get()).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get()).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get()).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else if (typeDim.equals(&quot;h&quot;)) {
+                    min = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce(( first,  second) -> second)).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else {
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(&quot;Dimension not valid!&quot;);
+                    stat.setMin(0);
+                    stat.setMed(0);
+                    stat.setMax(0);
+                    return stat;
+                }
+            }
+        case &quot;min in last month&quot;:
+            {
+                String lastMonth = tweets.get(0).findMonth();
+                if (typeDim.equals(&quot;w&quot;)) {
+                    min = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get()).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get()).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).findFirst().get()).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else if (typeDim.equals(&quot;h&quot;)) {
+                    min = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce(( first,  second) -> second)).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMin()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else {
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(&quot;Dimension not valid!&quot;);
+                    stat.setMin(0);
+                    stat.setMed(0);
+                    stat.setMax(0);
+                    return stat;
+                }
+            }
+        case &quot;med in last month&quot;:
+            {
+                String lastMonth = tweets.get(0).findMonth();
+                if (typeDim.equals(&quot;w&quot;)) {
+                    min = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get()).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get()).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).findFirst().get()).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else if (typeDim.equals(&quot;h&quot;)) {
+                    min = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce(( first,  second) -> second)).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMed()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else {
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(&quot;Dimension not valid!&quot;);
+                    stat.setMin(0);
+                    stat.setMed(0);
+                    stat.setMax(0);
+                    return stat;
+                }
+            }
+        case &quot;max in last month&quot;:
+            {
+                String lastMonth = tweets.get(0).findMonth();
+                if (typeDim.equals(&quot;w&quot;)) {
+                    min = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get()).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get()).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).findFirst().get()).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else if (typeDim.equals(&quot;h&quot;)) {
+                    min = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).min(Comparator.comparing(Integer::valueOf)).get();
+                    med = (double) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce(( first,  second) -> second)).map(Object::toString).map(Double::parseDouble).mapToDouble(Double::doubleValue).average().getAsDouble();
+                    max = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(lastMonth)).map( Tweet -> Arrays.stream(Tweet.getEvento().getMax()).reduce(( first,  second) -> second)).map(Object::toString).map(Integer::parseInt).max(Comparator.comparing(Integer::valueOf)).get();
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(typeDim);
+                    stat.setMin(min);
+                    stat.setMed(med);
+                    stat.setMax(max);
+                    return stat;
+                } else {
+                    stat.setTweetattribute(typestat);
+                    stat.setImageDim(&quot;Dimension not valid!&quot;);
+                    stat.setMin(0);
+                    stat.setMed(0);
+                    stat.setMax(0);
+                    return stat;
+                }
+            }
+        default:
+            {
+                throw new InvalidTypeStatException(&quot;Typestat or dimension not valid&quot;);
+            }
+    }
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zKazkMRWEeqRxpo29PUYjg" name="ImageStats" visibility="public" method="_zKdP0sRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKcowMRWEeqRxpo29PUYjg" name="tweetlist" type="_zH6SIsRWEeqRxpo29PUYjg">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zKdP0MRWEeqRxpo29PUYjg"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zKdP0cRWEeqRxpo29PUYjg" value="*"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zKd24MRWEeqRxpo29PUYjg" name="returnImageStat" visibility="public" method="_zKgTIMRWEeqRxpo29PUYjg" raisedException="_zH98g8RWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKed8MRWEeqRxpo29PUYjg" type="_zH-jkcRWEeqRxpo29PUYjg" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKed8cRWEeqRxpo29PUYjg" name="typestat"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKfFAMRWEeqRxpo29PUYjg" name="typeDim"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_zJg0oMRWEeqRxpo29PUYjg" name="GeneralStats" visibility="public">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zKK78MRWEeqRxpo29PUYjg" name="tweets" visibility="private" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zKK78cRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zKK78sRWEeqRxpo29PUYjg" value="*"/>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zKPNYsRWEeqRxpo29PUYjg" name="GeneralStats" specification="_zKLjAMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    this.tweets = tweetlist;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zKRpoMRWEeqRxpo29PUYjg" name="returnGeneralStat" specification="_zKP0cMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    GeneralStatsMod stat = new GeneralStatsMod();
+    int counter = 0;
+    switch(typestat) {
+        case &quot;type&quot;:
+            {
+                if (typefilter.equals(&quot;geomagnetic conditions&quot;))
+                    counter = (int) tweets.stream().filter( Tweet -> Tweet.getEvento().getType().equals(&quot;geomagnetic conditions&quot;)).count();
+                else if (typefilter.equals(&quot;geomagnetic storm&quot;))
+                    counter = (int) tweets.stream().filter( Tweet -> Tweet.getEvento().getType().equals(&quot;geomagnetic storm&quot;)).count();
+                else if (typefilter.equals(&quot;flare&quot;))
+                    counter = (int) tweets.stream().filter( Tweet -> Tweet.getEvento().getType().equals(&quot;flare&quot;)).count();
+                else
+                    counter = 0;
+                stat.setTweetAttribute(typestat);
+                stat.setAttributeType(typefilter);
+                stat.setCounter(counter);
+                return stat;
+            }
+        case &quot;date&quot;:
+            {
+                switch(typefilter) {
+                    case &quot;Jan&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Jan&quot;)).count();
+                        break;
+                    case &quot;Feb&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Feb&quot;)).count();
+                        break;
+                    case &quot;Mar&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Mar&quot;)).count();
+                        break;
+                    case &quot;Apr&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Apr&quot;)).count();
+                        break;
+                    case &quot;May&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;May&quot;)).count();
+                        break;
+                    case &quot;Jun&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Jun&quot;)).count();
+                        break;
+                    case &quot;Jul&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Jul&quot;)).count();
+                        break;
+                    case &quot;Aug&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Aug&quot;)).count();
+                        break;
+                    case &quot;Sep&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Sep&quot;)).count();
+                        break;
+                    case &quot;Oct&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Oct&quot;)).count();
+                        break;
+                    case &quot;Nov&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Nov&quot;)).count();
+                        break;
+                    case &quot;Dec&quot;:
+                        counter = (int) tweets.stream().filter( Tweet -> Tweet.findMonth().equals(&quot;Dec&quot;)).count();
+                        break;
+                    default:
+                        counter = 0;
+                }
+                stat.setTweetAttribute(typestat);
+                stat.setAttributeType(typefilter);
+                stat.setCounter(counter);
+                return stat;
+            }
+        case &quot;type in last month&quot;:
+            {
+                String lastMonth = tweets.get(0).findMonth();
+                if (typefilter.equals(&quot;geomagnetic conditions&quot;))
+                    counter = (int) tweets.stream().filter( Tweet -> Tweet.getEvento().getType().equals(&quot;geomagnetic conditions&quot;)).filter( Tweet -> Tweet.findMonth().equals(lastMonth)).count();
+                else if (typefilter.equals(&quot;geomagnetic storm&quot;))
+                    counter = (int) tweets.stream().filter( Tweet -> Tweet.getEvento().getType().equals(&quot;geomagnetic storm&quot;)).filter( Tweet -> Tweet.findMonth().equals(lastMonth)).count();
+                else if (typefilter.equals(&quot;flare&quot;))
+                    counter = (int) tweets.stream().filter( Tweet -> Tweet.getEvento().getType().equals(&quot;flare&quot;)).filter( Tweet -> Tweet.findMonth().equals(lastMonth)).count();
+                else
+                    counter = 0;
+                stat.setTweetAttribute(typestat);
+                stat.setAttributeType(typefilter);
+                stat.setCounter(counter);
+                return stat;
+            }
+        default:
+            {
+                throw new InvalidTypeStatException(&quot;Typestat or typefilter not valid!&quot;);
+            }
+    }
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zKLjAMRWEeqRxpo29PUYjg" name="GeneralStats" visibility="public" method="_zKPNYsRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKOmUMRWEeqRxpo29PUYjg" name="tweetlist" type="_zH6SIsRWEeqRxpo29PUYjg">
+                    <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zKPNYMRWEeqRxpo29PUYjg"/>
+                    <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zKPNYcRWEeqRxpo29PUYjg" value="*"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zKP0cMRWEeqRxpo29PUYjg" name="returnGeneralStat" visibility="public" method="_zKRpoMRWEeqRxpo29PUYjg" raisedException="_zH98g8RWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKQbgMRWEeqRxpo29PUYjg" type="_zH9Vc8RWEeqRxpo29PUYjg" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKQbgcRWEeqRxpo29PUYjg" name="typestat"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zKRCkMRWEeqRxpo29PUYjg" name="typefilter"/>
+                </ownedOperation>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_zJlGEMRWEeqRxpo29PUYjg" name="filter">
+              <packagedElement xmi:type="uml:Class" xmi:id="_zJlGEcRWEeqRxpo29PUYjg" name="ImageFilter" visibility="public">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zJltIMRWEeqRxpo29PUYjg" name="tweets" visibility="private" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJltIcRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJmUMMRWEeqRxpo29PUYjg" value="*"/>
+                  <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zJmUMcRWEeqRxpo29PUYjg" name="defaultValue">
+                    <language>JAVA</language>
+                    <body>new ArrayList&lt;Tweet>()</body>
+                  </defaultValue>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJpXgMRWEeqRxpo29PUYjg" name="ImageFilter" specification="_zJm7QMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    tweets = Database.getTweet();
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJrMsMRWEeqRxpo29PUYjg" name="get" specification="_zJp-kMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    String out = ArrayListOperation.arrayListToFilteredString(tweets, filter);
+    return out;
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJm7QMRWEeqRxpo29PUYjg" name="ImageFilter" visibility="public" method="_zJpXgMRWEeqRxpo29PUYjg"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJp-kMRWEeqRxpo29PUYjg" name="get" visibility="public" method="_zJrMsMRWEeqRxpo29PUYjg" raisedException="_zH9VcMRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJp-kcRWEeqRxpo29PUYjg" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJqloMRWEeqRxpo29PUYjg" name="filter"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_zJrzwMRWEeqRxpo29PUYjg" name="CombinedFilter" visibility="public">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zJsa0MRWEeqRxpo29PUYjg" name="tweets" visibility="private" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJsa0cRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJtB4MRWEeqRxpo29PUYjg" value="*"/>
+                  <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zJtB4cRWEeqRxpo29PUYjg" name="defaultValue">
+                    <language>JAVA</language>
+                    <body>new ArrayList&lt;Tweet>()</body>
+                  </defaultValue>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zJtB4sRWEeqRxpo29PUYjg" name="newTweets" visibility="private" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJtB48RWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJtB5MRWEeqRxpo29PUYjg" value="*"/>
+                  <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zJtB5cRWEeqRxpo29PUYjg" name="defaultValue">
+                    <language>JAVA</language>
+                    <body>new ArrayList&lt;Tweet>()</body>
+                  </defaultValue>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJu3EMRWEeqRxpo29PUYjg" name="CombinedFilter" specification="_zJtB5sRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    tweets = Database.getTweet();
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJxTUMRWEeqRxpo29PUYjg" name="get" specification="_zJwFMMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    for (Tweet t : tweets) {
+        if (t.getEvento().getType().equalsIgnoreCase(filter1)) {
+            newTweets.add(t);
+        } else {
+            continue;
+        }
+    }
+    String out = ArrayListOperation.arrayListToFilteredString(newTweets, filter2);
+    return out;
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJtB5sRWEeqRxpo29PUYjg" name="CombinedFilter" visibility="public" method="_zJu3EMRWEeqRxpo29PUYjg"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJwFMMRWEeqRxpo29PUYjg" name="get" visibility="public" method="_zJxTUMRWEeqRxpo29PUYjg" raisedException="_zH9VcMRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJwsQMRWEeqRxpo29PUYjg" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJwsQcRWEeqRxpo29PUYjg" name="filter1"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJwsQsRWEeqRxpo29PUYjg" name="filter2"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_zJx6YMRWEeqRxpo29PUYjg" name="TypeFilter" visibility="public">
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zJyhcMRWEeqRxpo29PUYjg" name="tweets" visibility="private" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJyhccRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJzIgMRWEeqRxpo29PUYjg" value="*"/>
+                  <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zJzIgcRWEeqRxpo29PUYjg" name="defaultValue">
+                    <language>JAVA</language>
+                    <body>new ArrayList&lt;Tweet>()</body>
+                  </defaultValue>
+                </ownedAttribute>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_zJzIgsRWEeqRxpo29PUYjg" name="newTweets" visibility="private" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zJzvkMRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zJzvkcRWEeqRxpo29PUYjg" value="*"/>
+                  <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zJzvksRWEeqRxpo29PUYjg" name="defaultValue">
+                    <language>JAVA</language>
+                    <body>new ArrayList&lt;Tweet>()</body>
+                  </defaultValue>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJ2L0MRWEeqRxpo29PUYjg" name="TypeFilter" specification="_zJ0WoMRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    tweets = Database.getTweet();
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJ3Z8cRWEeqRxpo29PUYjg" name="get" specification="_zJ2y4MRWEeqRxpo29PUYjg">
+                  <language>JAVA</language>
+                  <body>
+    for (Tweet t : tweets) {
+        if (t.getEvento().getType().equalsIgnoreCase(filter1)) {
+            newTweets.add(t);
+        } else {
+            continue;
+        }
+    }
+    String tString = ArrayListOperation.arrayListToString(newTweets);
+    return tString;
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ0WoMRWEeqRxpo29PUYjg" name="TypeFilter" visibility="public" method="_zJ2L0MRWEeqRxpo29PUYjg"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_zJ2y4MRWEeqRxpo29PUYjg" name="get" visibility="public" method="_zJ3Z8cRWEeqRxpo29PUYjg">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ2y4cRWEeqRxpo29PUYjg" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJ3Z8MRWEeqRxpo29PUYjg" name="filter1"/>
+                </ownedOperation>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_zH8uYsRWEeqRxpo29PUYjg" name="exception">
+            <packagedElement xmi:type="uml:Class" xmi:id="_zH9VcMRWEeqRxpo29PUYjg" name="FilterNotFoundException" visibility="public">
+              <generalization xmi:type="uml:Generalization" xmi:id="_zINNEMRWEeqRxpo29PUYjg" general="_zIKJwMRWEeqRxpo29PUYjg"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIN0IMRWEeqRxpo29PUYjg" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIObMMRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>1L</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIQ3cMRWEeqRxpo29PUYjg" name="FilterNotFoundException" specification="_zIObMcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    super();
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIVI4MRWEeqRxpo29PUYjg" name="FilterNotFoundException" specification="_zIRegMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    super(message);
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIObMcRWEeqRxpo29PUYjg" name="FilterNotFoundException" visibility="public" method="_zIQ3cMRWEeqRxpo29PUYjg"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIRegMRWEeqRxpo29PUYjg" name="FilterNotFoundException" visibility="public" method="_zIVI4MRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIUh0MRWEeqRxpo29PUYjg" name="message"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_zH98g8RWEeqRxpo29PUYjg" name="InvalidTypeStatException" visibility="public">
+              <generalization xmi:type="uml:Generalization" xmi:id="_zIWXAMRWEeqRxpo29PUYjg" general="_zIKJwMRWEeqRxpo29PUYjg"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIWXAcRWEeqRxpo29PUYjg" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIW-EMRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>1L</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIZaUMRWEeqRxpo29PUYjg" name="InvalidTypeStatException" specification="_zIXlIMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    super();
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIcdocRWEeqRxpo29PUYjg" name="InvalidTypeStatException" specification="_zIaBYMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    super(message);
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIXlIMRWEeqRxpo29PUYjg" name="InvalidTypeStatException" visibility="public" method="_zIZaUMRWEeqRxpo29PUYjg"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIaBYMRWEeqRxpo29PUYjg" name="InvalidTypeStatException" visibility="public" method="_zIcdocRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIcdoMRWEeqRxpo29PUYjg" name="message"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_zIKJwMRWEeqRxpo29PUYjg" name="ClassNotFoundException"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_zIA_0MRWEeqRxpo29PUYjg" name="database">
+            <packagedElement xmi:type="uml:Class" xmi:id="_zIBm4MRWEeqRxpo29PUYjg" name="Database" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zICN8MRWEeqRxpo29PUYjg" name="min" visibility="private" isStatic="true" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIC1AMRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIC1AcRWEeqRxpo29PUYjg" value="*"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIC1AsRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>{ &quot; &quot;, &quot; &quot; }</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIDcEMRWEeqRxpo29PUYjg" name="med" visibility="private" isStatic="true" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIEDIMRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIEDIcRWEeqRxpo29PUYjg" value="*"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIEDIsRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>{ &quot; &quot;, &quot; &quot; }</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIEqMMRWEeqRxpo29PUYjg" name="max" visibility="private" isStatic="true" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIFRQMRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIFRQcRWEeqRxpo29PUYjg" value="*"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIF4UMRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>{ &quot; &quot;, &quot; &quot; }</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIF4UcRWEeqRxpo29PUYjg" name="tweet" visibility="private" isStatic="true" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIGfYMRWEeqRxpo29PUYjg" name="tweets" visibility="private" isStatic="true" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIHGcMRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIHGccRWEeqRxpo29PUYjg" value="*"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIHGcsRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>new ArrayList&lt;Tweet>()</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zIHGc8RWEeqRxpo29PUYjg" name="filteredTweets" visibility="private" isStatic="true" type="_zH6SIsRWEeqRxpo29PUYjg" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIHGdMRWEeqRxpo29PUYjg"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIHtgMRWEeqRxpo29PUYjg" value="*"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zIHtgcRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>new ArrayList&lt;Tweet>()</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zIIUkMRWEeqRxpo29PUYjg" name="getTweet" specification="_zIHtgsRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    return tweets;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zII7ocRWEeqRxpo29PUYjg" name="download" specification="_zIIUkcRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    try {
+        URLConnection twitterConnection = new URL(url).openConnection();
+        twitterConnection.addRequestProperty(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36&quot;);
+        InputStream inConnect = twitterConnection.getInputStream();
+        String data = &quot;&quot;;
+        String line = &quot;&quot;;
+        String tweetDate = &quot; &quot;;
+        String tweetText = &quot; &quot;;
+        try {
+            InputStreamReader in = new InputStreamReader(inConnect);
+            BufferedReader buffer = new BufferedReader(in);
+            while ((line = buffer.readLine()) != null) data += line;
+        } catch (IOException e) {
+            System.out.println(e.getClass().getCanonicalName() + &quot;Errore in com.esame.database.Database.java: operazione di I/O JSON interrotta&quot;);
+        } finally {
+            inConnect.close();
+        }
+        JSONArray list = (JSONArray) JSONValue.parseWithException(data);
+        for (Object t : list) {
+            if (t instanceof JSONObject) {
+                JSONObject tweetList = (JSONObject) t;
+                tweetDate = (String) (tweetList.get(&quot;created_at&quot;));
+                tweetText = (String) (tweetList.get(&quot;text&quot;));
+                JSONObject tweetEntity = (JSONObject) (tweetList.get(&quot;entities&quot;));
+                if (((JSONObject) tweetEntity).containsKey(&quot;media&quot;)) {
+                    JSONArray tweetMedia = (JSONArray) (tweetEntity.get(&quot;media&quot;));
+                    for (Object m : tweetMedia) {
+                        if (m instanceof JSONObject) {
+                            JSONObject media = (JSONObject) m;
+                            JSONObject photoSizes = (JSONObject) (media.get(&quot;sizes&quot;));
+                            JSONObject small = (JSONObject) photoSizes.get(&quot;small&quot;);
+                            min[0] = (small.get(&quot;w&quot;)).toString();
+                            min[1] = (small.get(&quot;h&quot;)).toString();
+                            JSONObject medium = (JSONObject) photoSizes.get(&quot;medium&quot;);
+                            med[0] = (medium.get(&quot;w&quot;)).toString();
+                            med[1] = (medium.get(&quot;h&quot;)).toString();
+                            JSONObject large = (JSONObject) photoSizes.get(&quot;large&quot;);
+                            max[0] = (large.get(&quot;w&quot;)).toString();
+                            max[1] = (large.get(&quot;h&quot;)).toString();
+                        }
+                        tweet = new Tweet(tweetText, tweetDate, min, max, med);
+                        tweets.add(tweet);
+                    }
+                }
+            }
+        }
+        for (Object t : tweets) {
+            Tweet validTweet = (Tweet) t;
+            if (!(validTweet.getEvento().getType().equalsIgnoreCase(&quot;tweet not valid&quot;)))
+                filteredTweets.add(validTweet);
+        }
+        tweets = filteredTweets;
+    } catch (IOException e) {
+        System.out.println(e.getClass().getCanonicalName() + &quot;Errore in com.esame.database.Database.java: &quot; + &quot;Connessione non riuscita o url errato&quot;);
+    } catch (ParseException e) {
+        System.out.println(e.getClass().getCanonicalName() + &quot;Errore in com.esame.database.Database.java: &quot; + &quot;Operazione di parsing non riuscita: Object non può essere convertito in String&quot;);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    System.out.println(&quot;Inizializzazione database completata!&quot;);
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIHtgsRWEeqRxpo29PUYjg" name="getTweet" visibility="public" isStatic="true" method="_zIIUkMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIHtg8RWEeqRxpo29PUYjg" type="_zH6SIsRWEeqRxpo29PUYjg" direction="return">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zIHthMRWEeqRxpo29PUYjg"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zIHthcRWEeqRxpo29PUYjg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zIIUkcRWEeqRxpo29PUYjg" name="download" visibility="public" isStatic="true" method="_zII7ocRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zII7oMRWEeqRxpo29PUYjg" name="url"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_zJVOcMRWEeqRxpo29PUYjg" name="service">
+            <packagedElement xmi:type="uml:Class" xmi:id="_zJV1gMRWEeqRxpo29PUYjg" name="FilterService" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zJWckMRWEeqRxpo29PUYjg" name="out" visibility="private" isStatic="true" isUnique="false">
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zJXDoMRWEeqRxpo29PUYjg" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>new String()</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJY40cRWEeqRxpo29PUYjg" name="tweetInstance" specification="_zJXDocRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    switch(type) {
+        case &quot;combined&quot;:
+            CombinedFilter fil1 = new CombinedFilter();
+            out = fil1.get(filter1, filter2);
+            break;
+        case &quot;type&quot;:
+            TypeFilter fil2 = new TypeFilter();
+            out = fil2.get(filter1);
+            break;
+        case &quot;image&quot;:
+            ImageFilter fil3 = new ImageFilter();
+            out = fil3.get(filter2);
+            break;
+        default:
+            throw new FilterNotFoundException(&quot;Type of filter not valid&quot;);
+    }
+    return out;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJXDocRWEeqRxpo29PUYjg" name="tweetInstance" visibility="public" isStatic="true" method="_zJY40cRWEeqRxpo29PUYjg" raisedException="_zH9VcMRWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJXqsMRWEeqRxpo29PUYjg" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJYRwMRWEeqRxpo29PUYjg" name="type"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJYRwcRWEeqRxpo29PUYjg" name="filter1"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJY40MRWEeqRxpo29PUYjg" name="filter2"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_zJZf4MRWEeqRxpo29PUYjg" name="ImageStatsService" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zJaG8sRWEeqRxpo29PUYjg" name="iStat" visibility="private" isStatic="true" type="_zJaG8cRWEeqRxpo29PUYjg" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJdKQcRWEeqRxpo29PUYjg" name="ImageStatsService" specification="_zJaG88RWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    instanceIma(type, filter);
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJfmgMRWEeqRxpo29PUYjg" name="instanceIma" specification="_zJdxUMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    iStat = new ImageStats(Database.getTweet());
+    return iStat.returnImageStat(type, filter);
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJaG88RWEeqRxpo29PUYjg" name="ImageStatsService" visibility="public" method="_zJdKQcRWEeqRxpo29PUYjg" raisedException="_zH98g8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJcjMMRWEeqRxpo29PUYjg" name="type"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJdKQMRWEeqRxpo29PUYjg" name="filter"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJdxUMRWEeqRxpo29PUYjg" name="instanceIma" visibility="public" isStatic="true" method="_zJfmgMRWEeqRxpo29PUYjg" raisedException="_zH98g8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJeYYMRWEeqRxpo29PUYjg" type="_zH-jkcRWEeqRxpo29PUYjg" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJeYYcRWEeqRxpo29PUYjg" name="type"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJe_cMRWEeqRxpo29PUYjg" name="filter"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_zJgNkMRWEeqRxpo29PUYjg" name="GeneralStatsService" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_zJg0ocRWEeqRxpo29PUYjg" name="gStat" visibility="private" isStatic="true" type="_zJg0oMRWEeqRxpo29PUYjg" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJj38cRWEeqRxpo29PUYjg" name="GeneralStatsService" specification="_zJhbsMRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    instanceGen(type, filter);
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zJkfAsRWEeqRxpo29PUYjg" name="instanceGen" specification="_zJj38sRWEeqRxpo29PUYjg">
+                <language>JAVA</language>
+                <body>
+    gStat = new GeneralStats(Database.getTweet());
+    return gStat.returnGeneralStat(type, filter);
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJhbsMRWEeqRxpo29PUYjg" name="GeneralStatsService" visibility="public" method="_zJj38cRWEeqRxpo29PUYjg" raisedException="_zH98g8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJjQ4MRWEeqRxpo29PUYjg" name="type"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJj38MRWEeqRxpo29PUYjg" name="filter"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_zJj38sRWEeqRxpo29PUYjg" name="instanceGen" visibility="public" isStatic="true" method="_zJkfAsRWEeqRxpo29PUYjg" raisedException="_zH98g8RWEeqRxpo29PUYjg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJj388RWEeqRxpo29PUYjg" type="_zH9Vc8RWEeqRxpo29PUYjg" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJkfAMRWEeqRxpo29PUYjg" name="type"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_zJkfAcRWEeqRxpo29PUYjg" name="filter"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_wdN9wMRnEeqRxpo29PUYjg" name="Client"/>
+    <packagedElement xmi:type="uml:Artifact" xmi:id="_y5ruQMRpEeqRxpo29PUYjg" name="Web Server" useCase="_3bBLcMRpEeqRxpo29PUYjg _5hFgEMRpEeqRxpo29PUYjg _CZkjsMRqEeqRxpo29PUYjg _Fpy-UMRqEeqRxpo29PUYjg">
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_3bBLcMRpEeqRxpo29PUYjg" name="GET tweets" subject="_y5ruQMRpEeqRxpo29PUYjg"/>
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_5hFgEMRpEeqRxpo29PUYjg" name="POST filter" subject="_y5ruQMRpEeqRxpo29PUYjg"/>
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_CZkjsMRqEeqRxpo29PUYjg" name="POST general_stats" subject="_y5ruQMRpEeqRxpo29PUYjg"/>
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_Fpy-UMRqEeqRxpo29PUYjg" name="POST image_stats" subject="_y5ruQMRpEeqRxpo29PUYjg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_JiRrwMRqEeqRxpo29PUYjg" memberEnd="_JiS54MRqEeqRxpo29PUYjg _JiS54cRqEeqRxpo29PUYjg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JiSS0MRqEeqRxpo29PUYjg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JiSS0cRqEeqRxpo29PUYjg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_JiS54MRqEeqRxpo29PUYjg" name="get tweets" type="_3bBLcMRpEeqRxpo29PUYjg" association="_JiRrwMRqEeqRxpo29PUYjg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_JiS54cRqEeqRxpo29PUYjg" name="client" type="_wdN9wMRnEeqRxpo29PUYjg" association="_JiRrwMRqEeqRxpo29PUYjg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Ll-B0MRqEeqRxpo29PUYjg" memberEnd="_Ll-o4sRqEeqRxpo29PUYjg _Ll_P8MRqEeqRxpo29PUYjg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ll-o4MRqEeqRxpo29PUYjg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ll-o4cRqEeqRxpo29PUYjg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Ll-o4sRqEeqRxpo29PUYjg" name="post filter" type="_5hFgEMRpEeqRxpo29PUYjg" association="_Ll-B0MRqEeqRxpo29PUYjg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Ll_P8MRqEeqRxpo29PUYjg" name="client" type="_wdN9wMRnEeqRxpo29PUYjg" association="_Ll-B0MRqEeqRxpo29PUYjg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Mi49EMRqEeqRxpo29PUYjg" memberEnd="_Mi5kIcRqEeqRxpo29PUYjg _Mi5kIsRqEeqRxpo29PUYjg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Mi49EcRqEeqRxpo29PUYjg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Mi5kIMRqEeqRxpo29PUYjg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Mi5kIcRqEeqRxpo29PUYjg" name="post general_stats" type="_CZkjsMRqEeqRxpo29PUYjg" association="_Mi49EMRqEeqRxpo29PUYjg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Mi5kIsRqEeqRxpo29PUYjg" name="client" type="_wdN9wMRnEeqRxpo29PUYjg" association="_Mi49EMRqEeqRxpo29PUYjg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Nm-QQMRqEeqRxpo29PUYjg" memberEnd="_Nm_eYMRqEeqRxpo29PUYjg _Nm_eYcRqEeqRxpo29PUYjg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Nm-3UMRqEeqRxpo29PUYjg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nm-3UcRqEeqRxpo29PUYjg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Nm_eYMRqEeqRxpo29PUYjg" name="post image_stats" type="_Fpy-UMRqEeqRxpo29PUYjg" association="_Nm-QQMRqEeqRxpo29PUYjg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Nm_eYcRqEeqRxpo29PUYjg" name="client" type="_wdN9wMRnEeqRxpo29PUYjg" association="_Nm-QQMRqEeqRxpo29PUYjg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_EIWpMMT4EeqGjfCojIDkQw" name="Interaction12">
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_IPfdsMT4EeqGjfCojIDkQw" name="Controller" coveredBy="__-WRcMT4EeqGjfCojIDkQw _dYKrIMT5EeqGjfCojIDkQw _uifekMT4EeqGjfCojIDkQw"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_cx05UMT4EeqGjfCojIDkQw" name="Database" coveredBy="__-W4gMT4EeqGjfCojIDkQw _dYKEEMT5EeqGjfCojIDkQw _vr3hcMT4EeqGjfCojIDkQw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__-WRcMT4EeqGjfCojIDkQw" name="Message9SendEvent" covered="_IPfdsMT4EeqGjfCojIDkQw" message="__-SAAMT4EeqGjfCojIDkQw"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_uifekMT4EeqGjfCojIDkQw" name="ActionExecutionSpecification3" covered="_IPfdsMT4EeqGjfCojIDkQw" finish="_dYKrIMT5EeqGjfCojIDkQw" start="__-WRcMT4EeqGjfCojIDkQw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__-W4gMT4EeqGjfCojIDkQw" name="Message9ReceiveEvent" covered="_cx05UMT4EeqGjfCojIDkQw" message="__-SAAMT4EeqGjfCojIDkQw"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_vr3hcMT4EeqGjfCojIDkQw" name="ActionExecutionSpecification6" covered="_cx05UMT4EeqGjfCojIDkQw" finish="_dYKEEMT5EeqGjfCojIDkQw" start="__-W4gMT4EeqGjfCojIDkQw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dYKEEMT5EeqGjfCojIDkQw" name="Message10SendEvent" covered="_cx05UMT4EeqGjfCojIDkQw" message="_dYJdAMT5EeqGjfCojIDkQw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dYKrIMT5EeqGjfCojIDkQw" name="Message10ReceiveEvent" covered="_IPfdsMT4EeqGjfCojIDkQw" message="_dYJdAMT5EeqGjfCojIDkQw"/>
+      <message xmi:type="uml:Message" xmi:id="__-SAAMT4EeqGjfCojIDkQw" name="1:getTweet()" receiveEvent="__-W4gMT4EeqGjfCojIDkQw" sendEvent="__-WRcMT4EeqGjfCojIDkQw"/>
+      <message xmi:type="uml:Message" xmi:id="_dYJdAMT5EeqGjfCojIDkQw" name="1.1:ArrayList&lt;Tweet>" messageSort="reply" receiveEvent="_dYKrIMT5EeqGjfCojIDkQw" sendEvent="_dYKEEMT5EeqGjfCojIDkQw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_-7RRkMT9EeqUG_I1JncwkA" name="Interaction13">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WDGTUMT_EeqUG_I1JncwkA" name="" type="_-7RRkMT9EeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_D7zzQMT-EeqUG_I1JncwkA" name="Controller" coveredBy="_LabZkMUBEeqUG_I1JncwkA _EQLrUMT_EeqUG_I1JncwkA _La2QUcUBEeqUG_I1JncwkA _UZXDcMUBEeqUG_I1JncwkA _UZ2yssUBEeqUG_I1JncwkA _kp-yQMUBEeqUG_I1JncwkA _kqcFQMUBEeqUG_I1JncwkA _HmFIwMUCEeqUG_I1JncwkA _HmgmkcUCEeqUG_I1JncwkA _JoPqQcUBEeqUG_I1JncwkA _JoOcIMUBEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_gDG1IMT-EeqUG_I1JncwkA" name="CombinedFilter" coveredBy="_mAgD0MUCEeqUG_I1JncwkA _JkWhYcUEEeqUG_I1JncwkA _Jk23scUEEeqUG_I1JncwkA _qsWAgMUFEeqUG_I1JncwkA _qs72YcUFEeqUG_I1JncwkA _mA_MAMUCEeqUG_I1JncwkA _mA8vwMUCEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_1qcxAMT-EeqUG_I1JncwkA" name="Tweet" coveredBy="_JkXIcMUEEeqUG_I1JncwkA _Jk23sMUEEeqUG_I1JncwkA _Jk0bcMUEEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_4AATIMT-EeqUG_I1JncwkA" name="ArrayListOperation" coveredBy="_qsWnkMUFEeqUG_I1JncwkA _qs72YMUFEeqUG_I1JncwkA _qs5aIMUFEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_WDFsQMT_EeqUG_I1JncwkA" name="" represents="_WDGTUMT_EeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_cS8gwMT_EeqUG_I1JncwkA" name="FilterParam" coveredBy="_LabZkcUBEeqUG_I1JncwkA _La2QUMUBEeqUG_I1JncwkA _UZXqgMUBEeqUG_I1JncwkA _UZ2yscUBEeqUG_I1JncwkA _kp_ZUMUBEeqUG_I1JncwkA _kqbeMMUBEeqUG_I1JncwkA _LazNAMUBEeqUG_I1JncwkA _UZ0WcMUBEeqUG_I1JncwkA _kqZB8MUBEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_7bvkwMT_EeqUG_I1JncwkA" name="FilterService" coveredBy="_HmFIwcUCEeqUG_I1JncwkA _mAfcwMUCEeqUG_I1JncwkA _HmgmkMUCEeqUG_I1JncwkA _mA_MAcUCEeqUG_I1JncwkA _HmeKUMUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LabZkMUBEeqUG_I1JncwkA" name="Message17SendEvent" covered="_D7zzQMT-EeqUG_I1JncwkA" message="_LaaygMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_JoOcIMUBEeqUG_I1JncwkA" name="ActionExecutionSpecification14" covered="_D7zzQMT-EeqUG_I1JncwkA" finish="_JoPqQcUBEeqUG_I1JncwkA" start="_LabZkMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LabZkcUBEeqUG_I1JncwkA" name="Message17ReceiveEvent" covered="_cS8gwMT_EeqUG_I1JncwkA" message="_LaaygMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_LazNAMUBEeqUG_I1JncwkA" name="BehaviorExecutionSpecification19" covered="_cS8gwMT_EeqUG_I1JncwkA" finish="_La2QUMUBEeqUG_I1JncwkA" start="_LabZkcUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EQLrUMT_EeqUG_I1JncwkA" name="Message12SendEvent" covered="_D7zzQMT-EeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_La2QUMUBEeqUG_I1JncwkA" name="Message21SendEvent" covered="_cS8gwMT_EeqUG_I1JncwkA" message="_La1pQMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_La2QUcUBEeqUG_I1JncwkA" name="Message21ReceiveEvent" covered="_D7zzQMT-EeqUG_I1JncwkA" message="_La1pQMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UZXDcMUBEeqUG_I1JncwkA" name="Message23SendEvent" covered="_D7zzQMT-EeqUG_I1JncwkA" message="_UZWcYMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UZXqgMUBEeqUG_I1JncwkA" name="Message23ReceiveEvent" covered="_cS8gwMT_EeqUG_I1JncwkA" message="_UZWcYMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_UZ0WcMUBEeqUG_I1JncwkA" name="BehaviorExecutionSpecification26" covered="_cS8gwMT_EeqUG_I1JncwkA" finish="_UZ2yscUBEeqUG_I1JncwkA" start="_UZXqgMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UZ2yscUBEeqUG_I1JncwkA" name="Message28SendEvent" covered="_cS8gwMT_EeqUG_I1JncwkA" message="_UZ2ysMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UZ2yssUBEeqUG_I1JncwkA" name="Message28ReceiveEvent" covered="_D7zzQMT-EeqUG_I1JncwkA" message="_UZ2ysMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kp-yQMUBEeqUG_I1JncwkA" name="Message30SendEvent" covered="_D7zzQMT-EeqUG_I1JncwkA" message="_kp9kIMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kp_ZUMUBEeqUG_I1JncwkA" name="Message30ReceiveEvent" covered="_cS8gwMT_EeqUG_I1JncwkA" message="_kp9kIMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_kqZB8MUBEeqUG_I1JncwkA" name="BehaviorExecutionSpecification33" covered="_cS8gwMT_EeqUG_I1JncwkA" finish="_kqbeMMUBEeqUG_I1JncwkA" start="_kp_ZUMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kqbeMMUBEeqUG_I1JncwkA" name="Message35SendEvent" covered="_cS8gwMT_EeqUG_I1JncwkA" message="_kqa3IMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kqcFQMUBEeqUG_I1JncwkA" name="Message35ReceiveEvent" covered="_D7zzQMT-EeqUG_I1JncwkA" message="_kqa3IMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_HmFIwMUCEeqUG_I1JncwkA" name="Message37SendEvent" covered="_D7zzQMT-EeqUG_I1JncwkA" message="_HmEhsMUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_HmFIwcUCEeqUG_I1JncwkA" name="Message37ReceiveEvent" covered="_7bvkwMT_EeqUG_I1JncwkA" message="_HmEhsMUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_HmeKUMUCEeqUG_I1JncwkA" name="BehaviorExecutionSpecification40" covered="_7bvkwMT_EeqUG_I1JncwkA" finish="_HmgmkMUCEeqUG_I1JncwkA" start="_HmFIwcUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mAfcwMUCEeqUG_I1JncwkA" name="Message44SendEvent" covered="_7bvkwMT_EeqUG_I1JncwkA" message="_mAe1sMUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mAgD0MUCEeqUG_I1JncwkA" name="Message44ReceiveEvent" covered="_gDG1IMT-EeqUG_I1JncwkA" message="_mAe1sMUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_mA8vwMUCEeqUG_I1JncwkA" name="BehaviorExecutionSpecification47" covered="_gDG1IMT-EeqUG_I1JncwkA" finish="_mA_MAMUCEeqUG_I1JncwkA" start="_mAgD0MUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JkWhYcUEEeqUG_I1JncwkA" name="Message51SendEvent" covered="_gDG1IMT-EeqUG_I1JncwkA" message="_JkWhYMUEEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JkXIcMUEEeqUG_I1JncwkA" name="Message51ReceiveEvent" covered="_1qcxAMT-EeqUG_I1JncwkA" message="_JkWhYMUEEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_Jk0bcMUEEeqUG_I1JncwkA" name="BehaviorExecutionSpecification54" covered="_1qcxAMT-EeqUG_I1JncwkA" finish="_Jk23sMUEEeqUG_I1JncwkA" start="_JkXIcMUEEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Jk23sMUEEeqUG_I1JncwkA" name="Message56SendEvent" covered="_1qcxAMT-EeqUG_I1JncwkA" message="_Jk2QoMUEEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Jk23scUEEeqUG_I1JncwkA" name="Message56ReceiveEvent" covered="_gDG1IMT-EeqUG_I1JncwkA" message="_Jk2QoMUEEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qsWAgMUFEeqUG_I1JncwkA" name="Message58SendEvent" covered="_gDG1IMT-EeqUG_I1JncwkA" message="_qsUyYMUFEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qsWnkMUFEeqUG_I1JncwkA" name="Message58ReceiveEvent" covered="_4AATIMT-EeqUG_I1JncwkA" message="_qsUyYMUFEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_qs5aIMUFEeqUG_I1JncwkA" name="BehaviorExecutionSpecification61" covered="_4AATIMT-EeqUG_I1JncwkA" finish="_qs72YMUFEeqUG_I1JncwkA" start="_qsWnkMUFEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qs72YMUFEeqUG_I1JncwkA" name="Message63SendEvent" covered="_4AATIMT-EeqUG_I1JncwkA" message="_qs7PUMUFEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qs72YcUFEeqUG_I1JncwkA" name="Message63ReceiveEvent" covered="_gDG1IMT-EeqUG_I1JncwkA" message="_qs7PUMUFEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mA_MAMUCEeqUG_I1JncwkA" name="Message49SendEvent" covered="_gDG1IMT-EeqUG_I1JncwkA" message="_mA-k8MUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_HmgmkMUCEeqUG_I1JncwkA" name="Message42SendEvent" covered="_7bvkwMT_EeqUG_I1JncwkA" message="_Hmf_gMUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_HmgmkcUCEeqUG_I1JncwkA" name="Message42ReceiveEvent" covered="_D7zzQMT-EeqUG_I1JncwkA" message="_Hmf_gMUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mA_MAcUCEeqUG_I1JncwkA" name="Message49ReceiveEvent" covered="_7bvkwMT_EeqUG_I1JncwkA" message="_mA-k8MUCEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_JoPqQcUBEeqUG_I1JncwkA" name="ActionExecutionSpecification14Finish" covered="_D7zzQMT-EeqUG_I1JncwkA" execution="_JoOcIMUBEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_4ARuAMUAEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_4ARG8MUAEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_4ASVEMUAEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EQMSYMT_EeqUG_I1JncwkA" name="Message12ReceiveEvent"/>
+      <message xmi:type="uml:Message" xmi:id="_LaaygMUBEeqUG_I1JncwkA" name="2:getType()" receiveEvent="_LabZkcUBEeqUG_I1JncwkA" sendEvent="_LabZkMUBEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_La1pQMUBEeqUG_I1JncwkA" name="2.1:String" messageSort="reply" receiveEvent="_La2QUcUBEeqUG_I1JncwkA" sendEvent="_La2QUMUBEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_UZWcYMUBEeqUG_I1JncwkA" name="2.2:getFilter1()" receiveEvent="_UZXqgMUBEeqUG_I1JncwkA" sendEvent="_UZXDcMUBEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_UZ2ysMUBEeqUG_I1JncwkA" name="2.3:String" messageSort="reply" receiveEvent="_UZ2yssUBEeqUG_I1JncwkA" sendEvent="_UZ2yscUBEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_kp9kIMUBEeqUG_I1JncwkA" name="2.4:getFilter2()" receiveEvent="_kp_ZUMUBEeqUG_I1JncwkA" sendEvent="_kp-yQMUBEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_kqa3IMUBEeqUG_I1JncwkA" name="2.5:String" messageSort="reply" receiveEvent="_kqcFQMUBEeqUG_I1JncwkA" sendEvent="_kqbeMMUBEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_HmEhsMUCEeqUG_I1JncwkA" name="2.6:tweetInstance(String, String, String)" receiveEvent="_HmFIwcUCEeqUG_I1JncwkA" sendEvent="_HmFIwMUCEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_Hmf_gMUCEeqUG_I1JncwkA" name="2.13:String" messageSort="reply" receiveEvent="_HmgmkcUCEeqUG_I1JncwkA" sendEvent="_HmgmkMUCEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_mAe1sMUCEeqUG_I1JncwkA" name="2.7:get(String, String)" receiveEvent="_mAgD0MUCEeqUG_I1JncwkA" sendEvent="_mAfcwMUCEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_mA-k8MUCEeqUG_I1JncwkA" name="2.12:String" messageSort="reply" receiveEvent="_mA_MAcUCEeqUG_I1JncwkA" sendEvent="_mA_MAMUCEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_JkWhYMUEEeqUG_I1JncwkA" name="2.8:getEvento().getType()" receiveEvent="_JkXIcMUEEeqUG_I1JncwkA" sendEvent="_JkWhYcUEEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_Jk2QoMUEEeqUG_I1JncwkA" name="2.9:String" messageSort="reply" receiveEvent="_Jk23scUEEeqUG_I1JncwkA" sendEvent="_Jk23sMUEEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_qsUyYMUFEeqUG_I1JncwkA" name="2.10:ArrayListToFilteredString(newTweets, String)" receiveEvent="_qsWnkMUFEeqUG_I1JncwkA" sendEvent="_qsWAgMUFEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_qs7PUMUFEeqUG_I1JncwkA" name="2.11:String" messageSort="reply" receiveEvent="_qs72YcUFEeqUG_I1JncwkA" sendEvent="_qs72YMUFEeqUG_I1JncwkA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_wVDgAMUGEeqUG_I1JncwkA" name="Interaction14">
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_2rsR8MUGEeqUG_I1JncwkA" name="Controller" coveredBy="_a8OEwMUHEeqUG_I1JncwkA _a8fKgcUHEeqUG_I1JncwkA _UUFTIMUHEeqUG_I1JncwkA _UUDd8MUHEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_49bEAMUGEeqUG_I1JncwkA" name="GeneralStatsService" coveredBy="_a8Or0MUHEeqUG_I1JncwkA _O3VhIMUIEeqUG_I1JncwkA _O3pDIcUIEeqUG_I1JncwkA _7AEe8MULEeqUG_I1JncwkA _a8fKgMUHEeqUG_I1JncwkA _7Af8wMULEeqUG_I1JncwkA _a8cuQMUHEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_6yJJ8MUGEeqUG_I1JncwkA" name="GeneralStats" coveredBy="_O3WIMMUIEeqUG_I1JncwkA _wF9XQMUKEeqUG_I1JncwkA _O3pDIMUIEeqUG_I1JncwkA _wGSHYcUKEeqUG_I1JncwkA _7AEe8cULEeqUG_I1JncwkA _flT9gMUMEeqUG_I1JncwkA _fl0T0MUMEeqUG_I1JncwkA _zjxakMUNEeqUG_I1JncwkA _zkOGgMUNEeqUG_I1JncwkA _hEsTUMUREeqI2a_A6NqHhQ _hHZpEcUREeqI2a_A6NqHhQ _uTtSUMUREeqI2a_A6NqHhQ _uUxCQcUREeqI2a_A6NqHhQ _7AfVsMULEeqUG_I1JncwkA _O3mm4MUIEeqUG_I1JncwkA _7AcSYMULEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_RJhUQMUKEeqUG_I1JncwkA" name="Database" coveredBy="_wF9XQcUKEeqUG_I1JncwkA _wGSHYMUKEeqUG_I1JncwkA _wGPrIMUKEeqUG_I1JncwkA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_SMrIcMUMEeqUG_I1JncwkA" name="GeneralStatsMod" coveredBy="_flUkkMUMEeqUG_I1JncwkA _flzswMUMEeqUG_I1JncwkA _zjxakcUNEeqUG_I1JncwkA _zkNfcMUNEeqUG_I1JncwkA _hEsTUcUREeqI2a_A6NqHhQ _hHZpEMUREeqI2a_A6NqHhQ _uTt5YMUREeqI2a_A6NqHhQ _uUxCQMUREeqI2a_A6NqHhQ _flxQgMUMEeqUG_I1JncwkA _zkLDMMUNEeqUG_I1JncwkA _hHOp8MUREeqI2a_A6NqHhQ _uUsw0MUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_a8OEwMUHEeqUG_I1JncwkA" name="Message7SendEvent" covered="_2rsR8MUGEeqUG_I1JncwkA" message="_a8NdsMUHEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_UUDd8MUHEeqUG_I1JncwkA" name="BehaviorExecutionSpecification4" covered="_2rsR8MUGEeqUG_I1JncwkA" finish="_UUFTIMUHEeqUG_I1JncwkA" start="_a8OEwMUHEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_a8Or0MUHEeqUG_I1JncwkA" name="Message7ReceiveEvent" covered="_49bEAMUGEeqUG_I1JncwkA" message="_a8NdsMUHEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_a8cuQMUHEeqUG_I1JncwkA" name="BehaviorExecutionSpecification9" covered="_49bEAMUGEeqUG_I1JncwkA" finish="_a8fKgMUHEeqUG_I1JncwkA" start="_a8Or0MUHEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O3VhIMUIEeqUG_I1JncwkA" name="Message13SendEvent" covered="_49bEAMUGEeqUG_I1JncwkA" message="_O3U6EMUIEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O3WIMMUIEeqUG_I1JncwkA" name="Message13ReceiveEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_O3U6EMUIEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_O3mm4MUIEeqUG_I1JncwkA" name="BehaviorExecutionSpecification16" covered="_6yJJ8MUGEeqUG_I1JncwkA" finish="_O3pDIMUIEeqUG_I1JncwkA" start="_O3WIMMUIEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wF9XQMUKEeqUG_I1JncwkA" name="Message21SendEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_wF8wMMUKEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wF9XQcUKEeqUG_I1JncwkA" name="Message21ReceiveEvent" covered="_RJhUQMUKEeqUG_I1JncwkA" message="_wF8wMMUKEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_wGPrIMUKEeqUG_I1JncwkA" name="BehaviorExecutionSpecification24" covered="_RJhUQMUKEeqUG_I1JncwkA" finish="_wGSHYMUKEeqUG_I1JncwkA" start="_wF9XQcUKEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O3pDIMUIEeqUG_I1JncwkA" name="Message18SendEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_O3ocEMUIEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wGSHYMUKEeqUG_I1JncwkA" name="Message26SendEvent" covered="_RJhUQMUKEeqUG_I1JncwkA" message="_wGRgUMUKEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O3pDIcUIEeqUG_I1JncwkA" name="Message18ReceiveEvent" covered="_49bEAMUGEeqUG_I1JncwkA" message="_O3ocEMUIEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wGSHYcUKEeqUG_I1JncwkA" name="Message26ReceiveEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_wGRgUMUKEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7AEe8MULEeqUG_I1JncwkA" name="Message28SendEvent" covered="_49bEAMUGEeqUG_I1JncwkA" message="_7AD34MULEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7AEe8cULEeqUG_I1JncwkA" name="Message28ReceiveEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_7AD34MULEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_7AcSYMULEeqUG_I1JncwkA" name="BehaviorExecutionSpecification31" covered="_6yJJ8MUGEeqUG_I1JncwkA" finish="_7AfVsMULEeqUG_I1JncwkA" start="_7AEe8cULEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_flT9gMUMEeqUG_I1JncwkA" name="Message36SendEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_flTWcMUMEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_flUkkMUMEeqUG_I1JncwkA" name="Message36ReceiveEvent" covered="_SMrIcMUMEeqUG_I1JncwkA" message="_flTWcMUMEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_flxQgMUMEeqUG_I1JncwkA" name="BehaviorExecutionSpecification39" covered="_SMrIcMUMEeqUG_I1JncwkA" finish="_flzswMUMEeqUG_I1JncwkA" start="_flUkkMUMEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_flzswMUMEeqUG_I1JncwkA" name="Message41SendEvent" covered="_SMrIcMUMEeqUG_I1JncwkA" message="_flzFsMUMEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fl0T0MUMEeqUG_I1JncwkA" name="Message41ReceiveEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_flzFsMUMEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zjxakMUNEeqUG_I1JncwkA" name="Message43SendEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_zjwMcMUNEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zjxakcUNEeqUG_I1JncwkA" name="Message43ReceiveEvent" covered="_SMrIcMUMEeqUG_I1JncwkA" message="_zjwMcMUNEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_zkLDMMUNEeqUG_I1JncwkA" name="BehaviorExecutionSpecification46" covered="_SMrIcMUMEeqUG_I1JncwkA" finish="_zkNfcMUNEeqUG_I1JncwkA" start="_zjxakcUNEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zkNfcMUNEeqUG_I1JncwkA" name="Message48SendEvent" covered="_SMrIcMUMEeqUG_I1JncwkA" message="_zkM4YMUNEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zkOGgMUNEeqUG_I1JncwkA" name="Message48ReceiveEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_zkM4YMUNEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hEsTUMUREeqI2a_A6NqHhQ" name="Message50SendEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_hElloMUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hEsTUcUREeqI2a_A6NqHhQ" name="Message50ReceiveEvent" covered="_SMrIcMUMEeqUG_I1JncwkA" message="_hElloMUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_hHOp8MUREeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification53" covered="_SMrIcMUMEeqUG_I1JncwkA" finish="_hHZpEMUREeqI2a_A6NqHhQ" start="_hEsTUcUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hHZpEMUREeqI2a_A6NqHhQ" name="Message55SendEvent" covered="_SMrIcMUMEeqUG_I1JncwkA" message="_hHYa8MUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hHZpEcUREeqI2a_A6NqHhQ" name="Message55ReceiveEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_hHYa8MUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uTtSUMUREeqI2a_A6NqHhQ" name="Message57SendEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_uTsEMMUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uTt5YMUREeqI2a_A6NqHhQ" name="Message57ReceiveEvent" covered="_SMrIcMUMEeqUG_I1JncwkA" message="_uTsEMMUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_uUsw0MUREeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification60" covered="_SMrIcMUMEeqUG_I1JncwkA" finish="_uUxCQMUREeqI2a_A6NqHhQ" start="_uTt5YMUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uUxCQMUREeqI2a_A6NqHhQ" name="Message62SendEvent" covered="_SMrIcMUMEeqUG_I1JncwkA" message="_uUwbMMUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uUxCQcUREeqI2a_A6NqHhQ" name="Message62ReceiveEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_uUwbMMUREeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_a8fKgMUHEeqUG_I1JncwkA" name="Message11SendEvent" covered="_49bEAMUGEeqUG_I1JncwkA" message="_a8ejcMUHEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7AfVsMULEeqUG_I1JncwkA" name="Message33SendEvent" covered="_6yJJ8MUGEeqUG_I1JncwkA" message="_7AeuoMULEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_a8fKgcUHEeqUG_I1JncwkA" name="Message11ReceiveEvent" covered="_2rsR8MUGEeqUG_I1JncwkA" message="_a8ejcMUHEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7Af8wMULEeqUG_I1JncwkA" name="Message33ReceiveEvent" covered="_49bEAMUGEeqUG_I1JncwkA" message="_7AeuoMULEeqUG_I1JncwkA"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_UUFTIMUHEeqUG_I1JncwkA" name="BehaviorExecutionSpecification4Finish" covered="_2rsR8MUGEeqUG_I1JncwkA" execution="_UUDd8MUHEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_a8NdsMUHEeqUG_I1JncwkA" name="3:instanceGen(String, String)" receiveEvent="_a8Or0MUHEeqUG_I1JncwkA" sendEvent="_a8OEwMUHEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_a8ejcMUHEeqUG_I1JncwkA" name="3.15:GeneralStatsMod" messageSort="reply" receiveEvent="_a8fKgcUHEeqUG_I1JncwkA" sendEvent="_a8fKgMUHEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_O3U6EMUIEeqUG_I1JncwkA" name="3.1:GeneralStats()" receiveEvent="_O3WIMMUIEeqUG_I1JncwkA" sendEvent="_O3VhIMUIEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_O3ocEMUIEeqUG_I1JncwkA" name="3.4:GeneralStats" messageSort="reply" receiveEvent="_O3pDIcUIEeqUG_I1JncwkA" sendEvent="_O3pDIMUIEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_wF8wMMUKEeqUG_I1JncwkA" name="3.2:getTweet()" receiveEvent="_wF9XQcUKEeqUG_I1JncwkA" sendEvent="_wF9XQMUKEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_wGRgUMUKEeqUG_I1JncwkA" name="3.3:ArrayList&lt;Tweet>" messageSort="reply" receiveEvent="_wGSHYcUKEeqUG_I1JncwkA" sendEvent="_wGSHYMUKEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_7AD34MULEeqUG_I1JncwkA" name="3.5:returnGeneralStat(String, String)" receiveEvent="_7AEe8cULEeqUG_I1JncwkA" sendEvent="_7AEe8MULEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_7AeuoMULEeqUG_I1JncwkA" name="3.14:GeneralStatsMod" messageSort="reply" receiveEvent="_7Af8wMULEeqUG_I1JncwkA" sendEvent="_7AfVsMULEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_flTWcMUMEeqUG_I1JncwkA" name="3.6:GeneralStatsMod()" receiveEvent="_flUkkMUMEeqUG_I1JncwkA" sendEvent="_flT9gMUMEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_flzFsMUMEeqUG_I1JncwkA" name="3.7:GeneralStatsMod" messageSort="reply" receiveEvent="_fl0T0MUMEeqUG_I1JncwkA" sendEvent="_flzswMUMEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_zjwMcMUNEeqUG_I1JncwkA" name="3.8:setTweetattribute(String)" receiveEvent="_zjxakcUNEeqUG_I1JncwkA" sendEvent="_zjxakMUNEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_zkM4YMUNEeqUG_I1JncwkA" name="3.9:GeneralStatsMod" messageSort="reply" receiveEvent="_zkOGgMUNEeqUG_I1JncwkA" sendEvent="_zkNfcMUNEeqUG_I1JncwkA"/>
+      <message xmi:type="uml:Message" xmi:id="_hElloMUREeqI2a_A6NqHhQ" name="3.10:setAttributetype(String)" receiveEvent="_hEsTUcUREeqI2a_A6NqHhQ" sendEvent="_hEsTUMUREeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_hHYa8MUREeqI2a_A6NqHhQ" name="3.11:GeneralStatsMod" messageSort="reply" receiveEvent="_hHZpEcUREeqI2a_A6NqHhQ" sendEvent="_hHZpEMUREeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_uTsEMMUREeqI2a_A6NqHhQ" name="3.12:setCounter(Int)" receiveEvent="_uTt5YMUREeqI2a_A6NqHhQ" sendEvent="_uTtSUMUREeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_uUwbMMUREeqI2a_A6NqHhQ" name="3.13:GeneralStatsMod" messageSort="reply" receiveEvent="_uUxCQcUREeqI2a_A6NqHhQ" sendEvent="_uUxCQMUREeqI2a_A6NqHhQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_oArYkMUSEeqI2a_A6NqHhQ" name="Interaction15">
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_8lWWgMUSEeqI2a_A6NqHhQ" name="Controller" coveredBy="_geFUYMUTEeqI2a_A6NqHhQ _ggiLccUTEeqI2a_A6NqHhQ _ag91sMUTEeqI2a_A6NqHhQ _ag8AgMUTEeqI2a_A6NqHhQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_A9TOMMUTEeqI2a_A6NqHhQ" name="ImageStatsService" coveredBy="_geF7cMUTEeqI2a_A6NqHhQ _xreNcMUTEeqI2a_A6NqHhQ _xrxIYMUTEeqI2a_A6NqHhQ _3XjUkMUVEeqI2a_A6NqHhQ _9PKoMMUVEeqI2a_A6NqHhQ _ggiLcMUTEeqI2a_A6NqHhQ _ggd6AMUTEeqI2a_A6NqHhQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_O3tTkMUTEeqI2a_A6NqHhQ" name="ImageStats" coveredBy="_xreNccUTEeqI2a_A6NqHhQ __PkEkMUTEeqI2a_A6NqHhQ _xrwhUcUTEeqI2a_A6NqHhQ __QBXkcUTEeqI2a_A6NqHhQ _3Xj7oMUVEeqI2a_A6NqHhQ _UaA-MMUWEeqI2a_A6NqHhQ _Uaam0MUWEeqI2a_A6NqHhQ _5yHdEMUWEeqI2a_A6NqHhQ _5ykwEMUWEeqI2a_A6NqHhQ _E5DVQMUXEeqI2a_A6NqHhQ _E5h2YMUXEeqI2a_A6NqHhQ _tg_NMMUXEeqI2a_A6NqHhQ _x2ueYMUXEeqI2a_A6NqHhQ _91YBsMUXEeqI2a_A6NqHhQ _9160QMUXEeqI2a_A6NqHhQ _KuiFcMUYEeqI2a_A6NqHhQ _KvIiYMUYEeqI2a_A6NqHhQ _9PKBIMUVEeqI2a_A6NqHhQ _3X7IAMUVEeqI2a_A6NqHhQ _xruFEMUTEeqI2a_A6NqHhQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_4dCA0MUTEeqI2a_A6NqHhQ" name="Database" coveredBy="__PkEkcUTEeqI2a_A6NqHhQ __QBXkMUTEeqI2a_A6NqHhQ __P-7UMUTEeqI2a_A6NqHhQ"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_IySGEMUWEeqI2a_A6NqHhQ" name="ImageStatsMod" coveredBy="_UaBlQMUWEeqI2a_A6NqHhQ _UaZ_wMUWEeqI2a_A6NqHhQ _5yHdEcUWEeqI2a_A6NqHhQ _5ykJAMUWEeqI2a_A6NqHhQ _E5D8UMUXEeqI2a_A6NqHhQ _E5hPUMUXEeqI2a_A6NqHhQ _tg_0QMUXEeqI2a_A6NqHhQ _x2t3UMUXEeqI2a_A6NqHhQ _91YBscUXEeqI2a_A6NqHhQ _916NMMUXEeqI2a_A6NqHhQ _KuisgMUYEeqI2a_A6NqHhQ _KvH7UMUYEeqI2a_A6NqHhQ _thgKkMUXEeqI2a_A6NqHhQ _UaXjgMUWEeqI2a_A6NqHhQ _5yhFsMUWEeqI2a_A6NqHhQ _E5ezEMUXEeqI2a_A6NqHhQ _913J4MUXEeqI2a_A6NqHhQ _KvDC0MUYEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_geFUYMUTEeqI2a_A6NqHhQ" name="Message7SendEvent" covered="_8lWWgMUSEeqI2a_A6NqHhQ" message="_geEtUMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_ag8AgMUTEeqI2a_A6NqHhQ" name="ActionExecutionSpecification4" covered="_8lWWgMUSEeqI2a_A6NqHhQ" finish="_ag91sMUTEeqI2a_A6NqHhQ" start="_geFUYMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_geF7cMUTEeqI2a_A6NqHhQ" name="Message7ReceiveEvent" covered="_A9TOMMUTEeqI2a_A6NqHhQ" message="_geEtUMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_ggd6AMUTEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification9" covered="_A9TOMMUTEeqI2a_A6NqHhQ" finish="_ggiLcMUTEeqI2a_A6NqHhQ" start="_geF7cMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xreNcMUTEeqI2a_A6NqHhQ" name="Message13SendEvent" covered="_A9TOMMUTEeqI2a_A6NqHhQ" message="_xrdmYMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xreNccUTEeqI2a_A6NqHhQ" name="Message13ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_xrdmYMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_xruFEMUTEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification16" covered="_O3tTkMUTEeqI2a_A6NqHhQ" finish="_xrwhUcUTEeqI2a_A6NqHhQ" start="_xreNccUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__PkEkMUTEeqI2a_A6NqHhQ" name="Message21SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="__Pi2cMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__PkEkcUTEeqI2a_A6NqHhQ" name="Message21ReceiveEvent" covered="_4dCA0MUTEeqI2a_A6NqHhQ" message="__Pi2cMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="__P-7UMUTEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification24" covered="_4dCA0MUTEeqI2a_A6NqHhQ" finish="__QBXkMUTEeqI2a_A6NqHhQ" start="__PkEkcUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xrwhUcUTEeqI2a_A6NqHhQ" name="Message18SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_xrwhUMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__QBXkMUTEeqI2a_A6NqHhQ" name="Message26SendEvent" covered="_4dCA0MUTEeqI2a_A6NqHhQ" message="__QAwgMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xrxIYMUTEeqI2a_A6NqHhQ" name="Message18ReceiveEvent" covered="_A9TOMMUTEeqI2a_A6NqHhQ" message="_xrwhUMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__QBXkcUTEeqI2a_A6NqHhQ" name="Message26ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="__QAwgMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3XjUkMUVEeqI2a_A6NqHhQ" name="Message28SendEvent" covered="_A9TOMMUTEeqI2a_A6NqHhQ" message="_3XitgMUVEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3Xj7oMUVEeqI2a_A6NqHhQ" name="Message28ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_3XitgMUVEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_3X7IAMUVEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification31" covered="_O3tTkMUTEeqI2a_A6NqHhQ" finish="_9PKBIMUVEeqI2a_A6NqHhQ" start="_3Xj7oMUVEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UaA-MMUWEeqI2a_A6NqHhQ" name="Message36SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_UaAXIMUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UaBlQMUWEeqI2a_A6NqHhQ" name="Message36ReceiveEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_UaAXIMUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_UaXjgMUWEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification39" covered="_IySGEMUWEeqI2a_A6NqHhQ" finish="_UaZ_wMUWEeqI2a_A6NqHhQ" start="_UaBlQMUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UaZ_wMUWEeqI2a_A6NqHhQ" name="Message41SendEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_UaZYsMUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Uaam0MUWEeqI2a_A6NqHhQ" name="Message41ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_UaZYsMUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5yHdEMUWEeqI2a_A6NqHhQ" name="Message43SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_5yGO8MUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5yHdEcUWEeqI2a_A6NqHhQ" name="Message43ReceiveEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_5yGO8MUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_5yhFsMUWEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification46" covered="_IySGEMUWEeqI2a_A6NqHhQ" finish="_5ykJAMUWEeqI2a_A6NqHhQ" start="_5yHdEcUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5ykJAMUWEeqI2a_A6NqHhQ" name="Message48SendEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_5yjh8MUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5ykwEMUWEeqI2a_A6NqHhQ" name="Message48ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_5yjh8MUWEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_E5DVQMUXEeqI2a_A6NqHhQ" name="Message50SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_E5CuMMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_E5D8UMUXEeqI2a_A6NqHhQ" name="Message50ReceiveEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_E5CuMMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_E5ezEMUXEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification53" covered="_IySGEMUWEeqI2a_A6NqHhQ" finish="_E5hPUMUXEeqI2a_A6NqHhQ" start="_E5D8UMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_E5hPUMUXEeqI2a_A6NqHhQ" name="Message55SendEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_E5goQMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_E5h2YMUXEeqI2a_A6NqHhQ" name="Message55ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_E5goQMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tg_NMMUXEeqI2a_A6NqHhQ" name="Message57SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_tg-mIMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tg_0QMUXEeqI2a_A6NqHhQ" name="Message57ReceiveEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_tg-mIMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_thgKkMUXEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification60" covered="_IySGEMUWEeqI2a_A6NqHhQ" finish="_x2t3UMUXEeqI2a_A6NqHhQ" start="_tg_0QMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_x2t3UMUXEeqI2a_A6NqHhQ" name="Message62SendEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_x2tQQMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_x2ueYMUXEeqI2a_A6NqHhQ" name="Message62ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_x2tQQMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_91YBsMUXEeqI2a_A6NqHhQ" name="Message64SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_91XaoMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_91YBscUXEeqI2a_A6NqHhQ" name="Message64ReceiveEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_91XaoMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_913J4MUXEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification67" covered="_IySGEMUWEeqI2a_A6NqHhQ" finish="_916NMMUXEeqI2a_A6NqHhQ" start="_91YBscUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_916NMMUXEeqI2a_A6NqHhQ" name="Message69SendEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_915mIMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9160QMUXEeqI2a_A6NqHhQ" name="Message69ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_915mIMUXEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_KuiFcMUYEeqI2a_A6NqHhQ" name="Message71SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_KuheYMUYEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_KuisgMUYEeqI2a_A6NqHhQ" name="Message71ReceiveEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_KuheYMUYEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_KvDC0MUYEeqI2a_A6NqHhQ" name="BehaviorExecutionSpecification74" covered="_IySGEMUWEeqI2a_A6NqHhQ" finish="_KvH7UMUYEeqI2a_A6NqHhQ" start="_KuisgMUYEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_KvH7UMUYEeqI2a_A6NqHhQ" name="Message76SendEvent" covered="_IySGEMUWEeqI2a_A6NqHhQ" message="_KvHUQMUYEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_KvIiYMUYEeqI2a_A6NqHhQ" name="Message76ReceiveEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_KvHUQMUYEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9PKBIMUVEeqI2a_A6NqHhQ" name="Message33SendEvent" covered="_O3tTkMUTEeqI2a_A6NqHhQ" message="_9PIzAMUVEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9PKoMMUVEeqI2a_A6NqHhQ" name="Message33ReceiveEvent" covered="_A9TOMMUTEeqI2a_A6NqHhQ" message="_9PIzAMUVEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ggiLcMUTEeqI2a_A6NqHhQ" name="Message11SendEvent" covered="_A9TOMMUTEeqI2a_A6NqHhQ" message="_gghkYMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ggiLccUTEeqI2a_A6NqHhQ" name="Message11ReceiveEvent" covered="_8lWWgMUSEeqI2a_A6NqHhQ" message="_gghkYMUTEeqI2a_A6NqHhQ"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_ag91sMUTEeqI2a_A6NqHhQ" name="ActionExecutionSpecification4Finish" covered="_8lWWgMUSEeqI2a_A6NqHhQ" execution="_ag8AgMUTEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_geEtUMUTEeqI2a_A6NqHhQ" name="4:instanceGen(String, String)" receiveEvent="_geF7cMUTEeqI2a_A6NqHhQ" sendEvent="_geFUYMUTEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_gghkYMUTEeqI2a_A6NqHhQ" name="4.19:ImageStatsMod" messageSort="reply" receiveEvent="_ggiLccUTEeqI2a_A6NqHhQ" sendEvent="_ggiLcMUTEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_xrdmYMUTEeqI2a_A6NqHhQ" name="4.1:ImageStats()" receiveEvent="_xreNccUTEeqI2a_A6NqHhQ" sendEvent="_xreNcMUTEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_xrwhUMUTEeqI2a_A6NqHhQ" name="4.4:ImageStats" messageSort="reply" receiveEvent="_xrxIYMUTEeqI2a_A6NqHhQ" sendEvent="_xrwhUcUTEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="__Pi2cMUTEeqI2a_A6NqHhQ" name="4.2:getTweet()" receiveEvent="__PkEkcUTEeqI2a_A6NqHhQ" sendEvent="__PkEkMUTEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="__QAwgMUTEeqI2a_A6NqHhQ" name="4.3:ArrayList&lt;Tweet>" messageSort="reply" receiveEvent="__QBXkcUTEeqI2a_A6NqHhQ" sendEvent="__QBXkMUTEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_3XitgMUVEeqI2a_A6NqHhQ" name="4.5:returnImageStats(String, String)" receiveEvent="_3Xj7oMUVEeqI2a_A6NqHhQ" sendEvent="_3XjUkMUVEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_9PIzAMUVEeqI2a_A6NqHhQ" name="4.18:ImageStatsMod" messageSort="reply" receiveEvent="_9PKoMMUVEeqI2a_A6NqHhQ" sendEvent="_9PKBIMUVEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_UaAXIMUWEeqI2a_A6NqHhQ" name="4.6:ImageStatsMod()" receiveEvent="_UaBlQMUWEeqI2a_A6NqHhQ" sendEvent="_UaA-MMUWEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_UaZYsMUWEeqI2a_A6NqHhQ" name="4.7:ImageStatsMod" messageSort="reply" receiveEvent="_Uaam0MUWEeqI2a_A6NqHhQ" sendEvent="_UaZ_wMUWEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_5yGO8MUWEeqI2a_A6NqHhQ" name="4.8:setTweetattribute(String)" receiveEvent="_5yHdEcUWEeqI2a_A6NqHhQ" sendEvent="_5yHdEMUWEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_5yjh8MUWEeqI2a_A6NqHhQ" name="4.9:ImageStatsMod" messageSort="reply" receiveEvent="_5ykwEMUWEeqI2a_A6NqHhQ" sendEvent="_5ykJAMUWEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_E5CuMMUXEeqI2a_A6NqHhQ" name="4.10:setImageDim(String)" receiveEvent="_E5D8UMUXEeqI2a_A6NqHhQ" sendEvent="_E5DVQMUXEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_E5goQMUXEeqI2a_A6NqHhQ" name="4.11:ImageStatsMod" messageSort="reply" receiveEvent="_E5h2YMUXEeqI2a_A6NqHhQ" sendEvent="_E5hPUMUXEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_tg-mIMUXEeqI2a_A6NqHhQ" name="4.12:setMin(int)" receiveEvent="_tg_0QMUXEeqI2a_A6NqHhQ" sendEvent="_tg_NMMUXEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_x2tQQMUXEeqI2a_A6NqHhQ" name="4.13:ImageStatsMod" messageSort="reply" receiveEvent="_x2ueYMUXEeqI2a_A6NqHhQ" sendEvent="_x2t3UMUXEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_91XaoMUXEeqI2a_A6NqHhQ" name="4.14:setMed(int)" receiveEvent="_91YBscUXEeqI2a_A6NqHhQ" sendEvent="_91YBsMUXEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_915mIMUXEeqI2a_A6NqHhQ" name="4.15:ImageStatsMod" messageSort="reply" receiveEvent="_9160QMUXEeqI2a_A6NqHhQ" sendEvent="_916NMMUXEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_KuheYMUYEeqI2a_A6NqHhQ" name="4.16:setMax(int)" receiveEvent="_KuisgMUYEeqI2a_A6NqHhQ" sendEvent="_KuiFcMUYEeqI2a_A6NqHhQ"/>
+      <message xmi:type="uml:Message" xmi:id="_KvHUQMUYEeqI2a_A6NqHhQ" name="4.17:ImageStatsMod" messageSort="reply" receiveEvent="_KvIiYMUYEeqI2a_A6NqHhQ" sendEvent="_KvH7UMUYEeqI2a_A6NqHhQ"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_S2PXAMRVEeqRxpo29PUYjg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_S2P-EMRVEeqRxpo29PUYjg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_S2ZvEMRVEeqRxpo29PUYjg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_S2aWIMRVEeqRxpo29PUYjg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_S2gcwMRVEeqRxpo29PUYjg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_S2hD0MRVEeqRxpo29PUYjg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_zIL-8MRWEeqRxpo29PUYjg" name="ClassNotFoundException" base_Classifier="_zIKJwMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zIQQYMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zIObMcRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zITTsMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zIRegMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zIYzQMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zIXlIMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zIb2kMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zIaBYMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zIkZcMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zIjLUMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zIyb4MRWEeqRxpo29PUYjg" base_BehavioralFeature="_zIwmssRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zI04IMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zIzC8MRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zI-pIMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zI8z8MRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zJJBMMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zJHMAcRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zJLdcMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zJKPUMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zJb8IMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zJaG88RWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zJip0MRWEeqRxpo29PUYjg" base_BehavioralFeature="_zJhbsMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zJowcMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zJm7QMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zJuQAMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zJtB5sRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zJ1kwMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zJ0WoMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zJ6dQMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zJ4oEsRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zKN_QMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zKLjAMRWEeqRxpo29PUYjg"/>
+  <standard:Create xmi:id="_zKcBsMRWEeqRxpo29PUYjg" base_BehavioralFeature="_zKazkMRWEeqRxpo29PUYjg"/>
+</xmi:XMI>
