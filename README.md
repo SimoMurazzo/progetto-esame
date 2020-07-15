@@ -11,7 +11,7 @@ Tramite API REST (GET o POST) è possibili effettuare le seguenti richieste all'
 * Restituzione delle statistiche riguardanti la tipologia dell'evento.
 * Restituzione delle statistiche sulle immagini.
 
-Vedere: [Come effettuare Richieste] (https://github.com/SimoMurazzo/progetto-esame#Effettuare-richieste
+Vedere: [Come effettuare Richieste](https://github.com/SimoMurazzo/progetto-esame#Effettuare-richieste)
 
 <p align="center">
   <img src="./Esame/model/model-progetto-esame/UseCase.png" width="500">
@@ -23,22 +23,23 @@ Vedere: [Come effettuare Richieste] (https://github.com/SimoMurazzo/progetto-esa
 ### Download
 
 Usando l'IDE Eclipse:
-- 'Window > Show view > other... > Git Repositories' per aprire la finestra relativa a GitHub
-- nella view appena comparsa selezionare 'clone a Git Repository'
+- `Window > Show view > other... > Git Repositories` per aprire la finestra relativa a GitHub
+- nella view appena comparsa selezionare `clone a Git Repository`
 - inserire l'URL di questa repository sulla casella URI (se necessario immettere le credenziali)
 - recarsi nel clone, tasto destro dopodiché Import Project (assicurarsi che venga importato come progetto Maven)
-- Infine provare ad eseguire il progetto, selezionandolo col tasto destro nel Package Explorer '> Run As > Spring Boot App'
+- Infine provare ad eseguire il progetto, selezionandolo col tasto destro nel Package Explorer `Run As > Spring Boot App`
 
 Senza l'utilizzo di un IDE, su linux:
 - scaricare il file ZIP ed estrarlo
 - aprire il terminale nella directory del file estratto
-- eseguire il comando 'mvn clean install'
-- se il BUILD avrà successo, procedere con 'java -jar target/nomeProgettoCompilato.jar' oppure 'mvn spring-boot:run'
+- eseguire il comando `mvn clean install`
+- se il BUILD avrà successo, procedere con `java -jar target/nomeProgettoCompilato.jar` oppure `mvn spring-boot:run`
 
 Su Windows:
 - scaricare il file zip ed estrarlo
 - scaricare maven e java jdk ed aggiungerli alle variabili d'ambiente (vedere guide apposite)
 - infine tramite cmd o PowerShell si possono seguire gli stessi passaggi riportati per linux
+
 Attenzione: Maven potrebbe fallire nel build dei file test, ma l'applicazione si avvia lo stesso.
 
 L'applicazione sarà attiva in ascolto all'indirizzo http://localhost:8080.
@@ -55,12 +56,13 @@ Sono possibili le seguenti richieste.
 |POST        |/general_stats?type="tipo"&filter="filtro"  |restituisce le statistiche generali sui tweet in base al tipo e al filtro specificato.   |
 |POST        |/image_stats?type="tipo"&filter="filtro"    |restituisce le statistiche sulle immagini in base al tipo a alla dimensione.             |
 
+
 La seguente tabella mostra i filtri disponibili.
 
 |   Nome Filtro   |    Descrizione    |   Esempi     |
 |-----------------|-------------------|--------------|
-|type             |tipo di statistica o del filtro  |type="date"     type:"combined"  |
-|filter(1,2)      |filtro effettivo sul dato, eventualmente numerato  |filter="flare"     filter1:"geomagnetic conditions",filter2:"min"  |
+|type             |tipo di statistica o del filtro  |type="date"&nbsp; &nbsp; &nbsp;  type:"combined"  |
+|filter(1,2)      |filtro effettivo sul dato, eventualmente numerato  |filter="flare"&nbsp; &nbsp; &nbsp;  filter1:"geomagnetic conditions",filter2:"min"  |
 
 ## Sviluppo
 
@@ -118,6 +120,13 @@ L'ArrayList sul quale fare le statistiche viene preso come indicato su *GET /twe
 a 'instanceIma' il quale istanzia l'oggetto 'ImageStats'. Quest'ultimo tramite il metodo 'returnImageStats' eseguirà il calcolo statistico che verrà poi incapsulato
 nell'oggetto, e infine restituito al client in formato JSON.
 <img src="./Esame/model/model-progetto-esame/SequencePOSTimage.png" width="1000" height="400">
+
+
+## Esempi Esecuzione Postman
+
+`POST /general_stats?tipo="tipo"&filter="filtro"`
+
+<img src="./Esame/model/model-progetto-esame/Esempio1Postman.png" width="500" height="300">
 
 ## Software Utilizzati
 * [Eclipse](https://www.eclipse.org) - Ambiente di sviluppo integrato
